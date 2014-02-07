@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Fujii Hironori
-tagline: Supporting tagline
+tagline: 
 ---
 {% include JB/setup %}
 
