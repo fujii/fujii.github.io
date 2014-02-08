@@ -65,9 +65,5 @@
   color: #FFF; }
 
 /* sharing */
-.post-share {
-  text-align: right; }
-
 .post-share li {
-  display: inline-block;
-  width: 100px; }
+  display: inline; }
