@@ -21,46 +21,36 @@ tags: []
 3. blue
 
 
----
-
 # 見出し
 
 ## 見出し2
+
 ### 見出し3
+
 #### 見出し4
+
 ##### 見出し5
+
 ###### 見出し6
-####### 見出し7
 
 
 # コードと syntax highlight
 
-4 space
-
+    /* スペース4つでインデント */
     int main() {
         return 0;
     }
 
-3 backticks
-
-```c
-int main() {
-    return 0;
-}
-```
-
-3 tilda
 
 ~~~ruby
-# comment
+# チルダ3つ
 def func
     puts "ほげ"
 end
 ~~~
 
-Liquid
-
 {% highlight python %}
+# Liquid
 def main:
 	print "Hello, world"
 {% endhighlight %}
@@ -84,32 +74,39 @@ def main:
 
 # テーブル
 
-<table>
-  <caption>タグ直書きのテーブル</caption>
-  <tr>
-    <th>りんご
-    <th>みかん
-    <th>梨
-  <tr>
-    <td>1
-    <td>2
-    <td>3
-  <tr>
-    <td>*強調*
-    <td>[Jekyll][1]
-    <td>6
-</table>
-
+## テーブル1
 
 りんご | みかん
 ------ | -------------
 1      | 2
 *強調* | [Jekyll][1]
 
+## テーブル2
+
 |りんご | みかん        |
 |------ | --------------|
 |1      | 2             |
 |*強調* | [Jekyll][1]   |
+
+## タグ直書きのテーブル
+
+<table>
+  <tr>
+    <th>りんご</th>
+    <th>みかん</th>
+    <th>梨</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>*強調*</td>
+    <td>[Jekyll][1]</td>
+    <td>6</td>
+  </tr>
+</table>
 
 
 [1]: http://jekyllrb.com/
