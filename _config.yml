@@ -27,6 +27,11 @@ author :
 #
 production_url : http://fujii.github.io
 
+# 
+markdown: redcarpet
+redcarpet:
+  extensions: [no_intra_emphasis]
+
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
