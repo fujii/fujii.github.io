@@ -63,3 +63,10 @@
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+
+/* sharing */
+.post-share {
+  text-align: right; }
+
+.post-share li {
+  display: inline; }
