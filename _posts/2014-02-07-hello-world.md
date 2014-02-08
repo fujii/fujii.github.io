@@ -49,12 +49,6 @@ def func
 end
 ~~~
 
-{% highlight python %}
-# Liquid
-def main:
-	print "Hello, world"
-{% endhighlight %}
-
 # inline
 
 * _強調_

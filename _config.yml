@@ -3,7 +3,7 @@
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-pygments: true
+pygments: false
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
@@ -29,6 +29,9 @@ production_url : http://fujii.github.io
 
 # 
 markdown: kramdown
+
+kramdown:
+  coderay_line_numbers: table
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
