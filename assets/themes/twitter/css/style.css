@@ -69,4 +69,5 @@
   text-align: right; }
 
 .post-share li {
-  display: inline; }
+  display: inline-block;
+  width: 100px; }
