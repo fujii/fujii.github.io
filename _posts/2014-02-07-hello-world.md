@@ -8,9 +8,9 @@ tags: []
 ---
 {% include JB/setup %}
 
-Jekyll はじめました。
+[Jekyll][1] はじめました。
 
-# ブロック
+# リスト
 
 * 赤
 * 黄
@@ -67,15 +67,50 @@ def main:
 
 # inline
 
-_強調_
-*強調*
-__さらに強調__
-**さらに強調**
+* _強調_
+* *強調*
+* __さらに強調__
+* **さらに強調**
 
-foo_bar_baz
+* foo_bar_baz
 
-変数 `foo` と関数 `main`
-変数`foo`と関数`main`
-'hoge
-'
+* 変数 `foo` と関数 `main`
+* 変数`foo`と関数`main`
+
+
+* [Google](http://google.com)
+* <http://google.com>
+* http://google.com
+
+# テーブル
+
+<table>
+  <caption>タグ直書きのテーブル</caption>
+  <tr>
+    <th>りんご
+    <th>みかん
+    <th>梨
+  <tr>
+    <td>1
+    <td>2
+    <td>3
+  <tr>
+    <td>*強調*
+    <td>[Jekyll][1]
+    <td>6
+</table>
+
+
+りんご | みかん
+------ | -------------
+1      | 2
+*強調* | [Jekyll][1]
+
+|りんご | みかん        |
+|------ | --------------|
+|1      | 2             |
+|*強調* | [Jekyll][1]   |
+
+
+[1]: http://jekyllrb.com/
 
