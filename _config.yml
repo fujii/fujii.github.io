@@ -123,20 +123,8 @@ JB :
   #
   sharing :
     provider : custom
-    twitter :
-      size : 90
-      via :
-      count : horizontal
-    facebook :
-      appid : 205602882797935
-      layout : button_count
-      font :
-      faces : false
-      width : 90
-    googleplus :
-      size : medium
-      width : 90
-      annotation : bubble
+    addthis :
+      pubid : ra-52f6dcd2120b2e1b
     
   # Settings for all other include helpers can be defined by creating 
   # a hash with key named for the given helper. ex:
