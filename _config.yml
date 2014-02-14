@@ -9,12 +9,12 @@ pygments: false
 # so be sure to set them if your theme uses them.
 #
 title : Fujii Hironori
-tagline: Site Tagline
+tagline: 
 author :
   name : Fujii Hironori
   email : fujii.hironori@gmail.com
   github : fujii
-#  twitter : username
+  twitter : fujii0
 #  feedburner : feedname
 timezone: Asia/Tokyo
 
