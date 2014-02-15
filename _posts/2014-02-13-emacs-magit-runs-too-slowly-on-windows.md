@@ -83,7 +83,7 @@ magit-git-lines は 5回呼ばれ 2.4 秒掛かっている。
 magit-git-exit-code, magit-git-string, magit-git-insert, magit-git-lines の
 process-file を process-file-shell-command に置き換える。
 
-~~~
+~~~lisp
 (defun magit-git-exit-code (&rest args)
   "Execute Git with ARGS, returning its exit code."
   (apply #'process-file-shell-command magit-git-executable nil nil nil
@@ -186,7 +186,7 @@ cmdproxy.exe を経由することのようである。
 
 `benchmark` 関数を使うと簡単に試せる。
 
-~~~
+~~~lisp
 (benchmark 10 '(process-file magit-git-executable nil nil nil))
 => "Elapsed time: 4.309000s"
 
@@ -195,7 +195,7 @@ cmdproxy.exe を経由することのようである。
 ~~~
 Cygwin Git を試しても違いはない。
 
-~~~
+~~~lisp
 (setq magit-git-executable "c:/cygwin/bin/git.exe")
 
 (benchmark 10 '(process-file magit-git-executable nil nil nil))
