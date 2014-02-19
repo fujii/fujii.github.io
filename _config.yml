@@ -105,8 +105,11 @@ JB :
   #        
   analytics :
     provider : false
-    google : 
+    google_classic : 
         tracking_id : 'UA-123-12'
+    google_universal : 
+        tracking_id : 'UA-123-12'
+        domain: 'github.com'
     getclicky :
       site_id : 
     mixpanel :
