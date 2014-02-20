@@ -10,6 +10,7 @@ GitHub Pages はじめました。
 * {{ site.author.email }}
 * [Facebook](https://www.facebook.com/fujii.hironori)
 * Twitter: [@{{ site.author.twitter }}](https://twitter.com/{{ site.author.twitter }})
+* [Github](https://github.com/fujii)
 
 ## Blog
 
