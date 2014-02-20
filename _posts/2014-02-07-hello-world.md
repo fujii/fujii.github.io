@@ -115,5 +115,14 @@ end
 <table style="width:auto;"><tr><td><a href="https://picasaweb.google.com/lh/photo/vubXbaSTMKeUhjYRqLfWXNMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img src="https://lh3.googleusercontent.com/-hqCz6XkYPKM/TPpQKEvoJEI/AAAAAAAAAEY/n0VJcyZWtDc/s144/101204_203234.jpg" height="144" width="108" /></a></td></tr><tr><td style="font-family:arial,sans-serif; font-size:11px; text-align:right">送信者 <a href="https://picasaweb.google.com/fujii.hironori/TXNihG?authuser=0&feat=embedwebsite">表参道ヒルズ ツリー</a></td></tr></table>
 タグ直書き
 
+
+# Liquid
+
+{% assign fruits = "りんご,みかん,ナシ,Orange" | split: ',' | sort %}
+
+{% for f in fruits %}
+* {{ f }}
+{% endfor %}
+
 [1]: http://jekyllrb.com/
 
