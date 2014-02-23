@@ -53,3 +53,18 @@ PtrSc が何故か右 Alt と Ctrl の間に配置されている。
 
 タッチパッドは Mac みたいに２本指でスクロールする。
 タッチパッドはなぜか使いにくく感じます。
+
+**2014-02-23 追記**  
+Insert キーは Fn + I でした。
+[ユーザガイド](http://support.lenovo.com/ja_JP/guides-and-manuals/detail.page?DocID=UM018768)
+には書かれていないが、他のは記載されています。
+
+> Fn + B: Break キーと同じ機能があります。  
+> Fn + P: Pause キーと同じ機能があります。  
+> Fn + S: SysRq キーと同じ機能があります。  
+> Fn + K: ScrLK キーと同じ機能があります。  
+
+マウスのミドルクリックのボタンがスペースキーのすぐ下にあるので
+xterm はこれでもペースト出来ました。
+
+さらに、IBus から Fcitx に変更したら Ctrl + ; でもペースト出来ました。
