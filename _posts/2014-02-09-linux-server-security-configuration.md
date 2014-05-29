@@ -15,4 +15,5 @@ tags: [linux]
 <http://dogmap.jp/2011/05/12/vps-security/>
 * これぐらいやっとけ　～Linuxサーバのセキュリティ設定～ - nabeの雑記帳  
 <http://nabe.blog.abk.nu/0485>
-
+* 最低限必要な CentOS セキュリティ設定 | Webセキュリティの小部屋
+<http://www.websec-room.com/2014/02/09/1822>
