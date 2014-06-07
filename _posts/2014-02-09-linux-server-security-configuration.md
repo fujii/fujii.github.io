@@ -7,9 +7,13 @@ tags: [linux]
 ---
 {% include JB/setup %}
 
-一時期は停滞していた CentOS だが、
-RedHat の支援を受けるようになったので
-これからはサーバは CentOS が第一候補だと思っています。
+CentOS は一時期は開発が停滞していた。
+
+* [CentOS 6ついにリリース、Red Hat Enterprise Linux 6から遅れること8か月](http://sourceforge.jp/magazine/11/07/12/0437244)
+* [CentOSの遅れで注目集める「Scientific Linux 6」](http://itpro.nikkeibp.co.jp/article/COLUMN/20110811/365081/)
+
+今は RedHat の支援を受けるようになったので
+これからは社内用の Linux サーバは CentOS が第一候補だと思っています。
 
 ここ10年くらいはずっと Debian と Ubuntu で
 久しぶりの RedHat 系のためサーバーの設定を調査しました。
