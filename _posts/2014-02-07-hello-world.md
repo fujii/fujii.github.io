@@ -49,6 +49,13 @@ def func
 end
 ~~~
 
+{% highlight ruby %}
+# highlight ruby
+def func
+    puts "ほげ"
+end
+{% endhighlight %}
+
 # inline
 
 * _強調_
@@ -104,15 +111,13 @@ end
 
 # 画像
 
-表参道ヒルズのツリーだよ。
-![表参道ヒルズのツリー](https://lh3.googleusercontent.com/-hqCz6XkYPKM/TPpQKEvoJEI/AAAAAAAAAEY/n0VJcyZWtDc/s288/101204_203234.jpg)
+![表参道ヒルズのツリー](https://farm8.staticflickr.com/7429/12560862614_1bdc1a29b3_k.jpg)
 リンクなし
 
-表参道ヒルズのツリーだよ。
-[![表参道ヒルズのツリー](https://lh3.googleusercontent.com/-hqCz6XkYPKM/TPpQKEvoJEI/AAAAAAAAAEY/n0VJcyZWtDc/s288/101204_203234.jpg)](http://www.omotesandohills.com/)
+[![表参道ヒルズのツリー](https://farm8.staticflickr.com/7429/12560862614_1bdc1a29b3_k.jpg)](http://google.com/)
 リンクあり
 
-<table style="width:auto;"><tr><td><a href="https://picasaweb.google.com/lh/photo/vubXbaSTMKeUhjYRqLfWXNMTjNZETYmyPJy0liipFm0?feat=embedwebsite"><img src="https://lh3.googleusercontent.com/-hqCz6XkYPKM/TPpQKEvoJEI/AAAAAAAAAEY/n0VJcyZWtDc/s144/101204_203234.jpg" height="144" width="108" /></a></td></tr><tr><td style="font-family:arial,sans-serif; font-size:11px; text-align:right">送信者 <a href="https://picasaweb.google.com/fujii.hironori/TXNihG?authuser=0&feat=embedwebsite">表参道ヒルズ ツリー</a></td></tr></table>
+<table style="width:194px;"><tr><td align="center" style="height:194px;background:url(https://www.gstatic.com/pwa/s/v/lighthousefe_20150907.00_p0/transparent_album_background.gif) no-repeat left"><a href="https://picasaweb.google.com/108766616282956994806/2010120402?authuser=0&feat=embedwebsite"><img src="https://lh3.googleusercontent.com/-xtv_NUSgRWc/Uyz7dDG88YE/AAAAAAAAKEw/Naf3tzkYrqU/s160-c-Ic42/2010120402.jpg" width="160" height="160" style="margin:1px 0 0 4px;"></a></td></tr><tr><td style="text-align:center;font-family:arial,sans-serif;font-size:11px"><a href="https://picasaweb.google.com/108766616282956994806/2010120402?authuser=0&feat=embedwebsite" style="color:#4D4D4D;font-weight:bold;text-decoration:none;">2010-12-04 表参道ヒルズ ツリー</a></td></tr></table>
 タグ直書き
 
 
