@@ -3,7 +3,7 @@
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-highighter: pygments
+highlighter: pygments
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
@@ -101,16 +101,18 @@ JB :
       num_posts: 5
       width: 580
       colorscheme: light
+    duoshuo :
+      short_name : jekyllbootstrap
    
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
   # Set 'provider' to false to turn analytics off globally.
   #        
   analytics :
-    provider : false
-    google_classic : 
-        tracking_id : 'UA-123-12'
-    google_universal : 
+    provider : google
+    gauges :
+        site_id : 'SITE ID'
+    google : 
         tracking_id : 'UA-123-12'
         domain: 'github.com'
     getclicky :

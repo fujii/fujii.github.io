@@ -1,10 +1,12 @@
-{% if site.safe and site.JB.analytics.provider and page.JB.analytics != false %}
+{% include JB/is_production %}
+
+{% if is_production and site.JB.analytics.provider and page.JB.analytics != false %}
 
 {% case site.JB.analytics.provider %}
-{% when "google_classic" %}
-  {% include JB/analytics-providers/google-classic %}
-{% when "google_universal" %}
-  {% include JB/analytics-providers/google-universal %}
+{% when "gauges" %}
+  {% include JB/analytics-providers/gauges %}
+{% when "google" %}
+  {% include JB/analytics-providers/google %}
 {% when "getclicky" %}
   {% include JB/analytics-providers/getclicky %}
 {% when "mixpanel" %}
