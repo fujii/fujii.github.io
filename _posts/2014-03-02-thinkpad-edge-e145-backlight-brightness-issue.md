@@ -11,7 +11,7 @@ The backlight brightness can not be adjusted with backlight hotkeys
 while a indicator will be shown on the top left conner of screen.
 When I plug in and out a power cable, the backlight brightness is getting brighter and darker.
 
-# standard ACPI backlight interface
+## standard ACPI backlight interface
 
 Standard ACPI backlight interface is in /sys/class/backlight/acpi_video0 directory.
 But, this does not work.
@@ -26,7 +26,7 @@ This interface can be disabled by kernel option in /etc/default/grub.
 GRUB_CMDLINE_LINUX_DEFAULT="acpi_backlight=vendor"
 ~~~
 
-# fglrx
+## fglrx
 
 My video card can be checked with lspci command:
 
@@ -116,7 +116,7 @@ fi
 This script can turn backligh on and off, while this is not a ideal solution.
 
 
-# radeon
+## radeon
 
 Unfortunately, a video driver radeon does not support Kabini (Radeon HD 8240) at the moment.
 On the other hand, the same name kernel driver radeon can handle backlight.
@@ -149,7 +149,7 @@ Section "Device"
 EndSection
 ~~~
 
-# thinkpad_acpi
+## thinkpad_acpi
 
 The kernel driver thinkpad_acpi is another backlight driver.
 

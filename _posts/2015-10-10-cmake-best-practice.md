@@ -6,7 +6,7 @@ tags : cmake
 ---
 {% include JB/setup %}
 
-# Do not define macro
+## Do not define macro
 
 Macro overrides variables in callers variable scope.
 Use function which has a own variable scope.
@@ -19,7 +19,7 @@ function(hello_get_something var_name)
 endfunction()
 ~~~
 
-# Use target_sources
+## Use target_sources
 
 Using `target_sources` makes more concise than using custom variable.
 
@@ -49,7 +49,7 @@ else()
 endif()
 ~~~
 
-# Use target_compile_features
+## Use target_compile_features
 
 Do not use a compile option `-std=c++11` explicitly.
 
@@ -61,7 +61,7 @@ target_compile_options(hello PRIVATE -std=c++11)
 target_compile_features(hello PRIVATE cxx_variadic_templates)
 ~~~
 
-# Prefix cache entries
+## Prefix cache entries
 
 Cache entry is global.
 Do not assume your project is the top project.
@@ -71,12 +71,12 @@ Use prefix to avoid name conflicts.
 option(hello_use_foo "Use Foo" ON)
 ~~~
 
-# Do not use CMAKE_SOURCE_DIR
+## Do not use CMAKE_SOURCE_DIR
 
 Do not assume your project is always the top project.
 Use `CMAKE_CURRENT_SOURCE_DIR`, `PROJECT_SOURCE_DIR` or `<PROJECT-NAME>_SOURCE_DIR` instead.
 
-# Do not generate into CMAKE_CURRENT_BINARY_DIR
+## Do not generate into CMAKE_CURRENT_BINARY_DIR
 
 The directory `${CMAKE_CURRENT_BINARY_DIR}` is shared by multple configurations
 in multi-configuration build systems such as Visual Studio.
@@ -104,7 +104,7 @@ If you write the following script, the output directory is `${CMAKE_BINARY_DIR}/
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 ~~~
 
-# Use cmake -E
+## Use cmake -E
 
 Do not use Unix commands such as cd, rm, mkdir, cp, env and tar.
 CMake supports them.
@@ -117,7 +117,7 @@ add_custom_command(
   )
 ~~~
 
-# Do not specify a library type explicitly unless necessary
+## Do not specify a library type explicitly unless necessary
 
 Users of your library should be able to choose static library or shared library to build.
 Do not specify a library type explicitly unless necessary.
@@ -147,7 +147,7 @@ set(BUILD_SHARED_LIBS ${hello_build_shared_libs})
 Note that directories has a own variable scope,
 setting BUILD_SHARED_LIBS does not affect the parent directory.
 
-# Define FOLDER directory property
+## Define FOLDER directory property
 
 If you have a lot of targets,
 FOLDER target property is usefull to organize the project files into folders in IDE.
@@ -166,7 +166,7 @@ Then, set FOLDER directory property to the current directory.
 set_directory_properties(PROPERTIES FOLDER gfx/hello)
 ~~~
 
-# References
+## References
 
 * [CMake Documentation](https://cmake.org/documentation/)
 * [CMake - Introduction and best practices](http://www.slideshare.net/DanielPfeifer1/cmake-48475415) by Daniel Pfeifer
