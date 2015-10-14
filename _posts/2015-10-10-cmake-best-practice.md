@@ -91,6 +91,18 @@ add_custom_command(
   DEPENDS script.py in.txt
   )
 ~~~
+On the other hand, you don't need to use `CMAKE_CFG_INTDIR` in the following variables
+because multi-configuration build systems automatically append `/${CMAKE_CFG_INTDIR}` if `CMAKE_CFG_INTDIR` is not included.
+
+* CMAKE_ARCHIVE_OUTPUT_DIRECTORY
+* CMAKE_LIBRARY_OUTPUT_DIRECTORY
+* CMAKE_RUNTIME_OUTPUT_DIRECTORY
+
+If you write the following script, the output directory is `${CMAKE_BINARY_DIR}/bin/${CMAKE_CFG_INTDIR}` in multi-configuration build systems.
+
+~~~cmake
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+~~~
 
 # Use cmake -E
 
