@@ -73,6 +73,8 @@ end
 * <http://google.com>
 * http://google.com
 
+* post_url で post へリンク [お好み焼き]({% post_url 2014-06-06-okonomiyaki %})
+
 # テーブル
 
 ## テーブル1
