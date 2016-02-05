@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [linux, e145]
 ---
-{% include JB/setup %}
 
 自宅の Linux PC が徐々に壊れ始めたので、
 廉価版 ThinkPad である ThinkPad Edge の E145 を購入しました。

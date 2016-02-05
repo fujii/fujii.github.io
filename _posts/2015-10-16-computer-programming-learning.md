@@ -3,7 +3,6 @@ layout: post
 title: "コンピュータ・プログラミングの学び方"
 tags : 
 ---
-{% include JB/setup %}
 
 Goolge などの IT 企業の発展を受けて、
 最近は子供にプログラミングを学ばせたいと思う親が増えているらしい。

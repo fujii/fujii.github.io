@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [linux]
 ---
-{% include JB/setup %}
 
 [Ubuntu Popularity Contest](http://popcon.ubuntu.com/) で package の人気投票を行っています。
 ここでの vote の意味は atime が 30日以内に更新されていることです。

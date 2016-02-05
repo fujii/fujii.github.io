@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [book]
 ---
-{% include JB/setup %}
 
 数年ぶりに『利己的な遺伝子』を読んだ。
 第一版は３０年以上前に出版された本で、

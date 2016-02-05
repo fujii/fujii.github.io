@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [recipe]
 ---
-{% include JB/setup %}
 
 ## 材料
 

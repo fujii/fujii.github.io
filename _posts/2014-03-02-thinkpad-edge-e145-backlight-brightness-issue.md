@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [e145, linux]
 ---
-{% include JB/setup %}
 
 The backlight brightness can not be adjusted with backlight hotkeys
 while a indicator will be shown on the top left conner of screen.

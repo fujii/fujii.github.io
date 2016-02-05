@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [recipe]
 ---
-{% include JB/setup %}
 
 ## クイズ30〜団結せよ!〜
 

@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [linux]
 ---
-{% include JB/setup %}
 
 CentOS は一時期は開発が停滞していた。
 

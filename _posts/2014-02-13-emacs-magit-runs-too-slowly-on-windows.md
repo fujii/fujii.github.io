@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [emacs, magit]
 ---
-{% include JB/setup %}
 
 環境:
 

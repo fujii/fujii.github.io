@@ -4,7 +4,6 @@ category:
 title: "CMake Best Practice"
 tags : cmake
 ---
-{% include JB/setup %}
 
 ## Do not define macro
 
