@@ -7,7 +7,7 @@ tags: [linux, e145]
 ---
 {% include JB/setup %}
 
-2月に[Ubuntu 13.10をインストール]({{ BASE_PATH }}/2014/02/18/install-ubuntu-13-10-to-thinkpad-edge-e145/)したばかりだが、
+2月に[Ubuntu 13.10をインストール]({% post_url 2014-02-18-install-ubuntu-13-10-to-thinkpad-edge-e145 %})したばかりだが、
 新しい Ubuntu で素の状態での動作具合が気になったので
 Ubuntu 14.04 LTS 日本語 Remix を ThinkPad Edge E145 にインストールしました。
 
