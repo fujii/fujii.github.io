@@ -42,5 +42,5 @@ tags: [recipe]
 
 ## 参考文献 
 
-* [テレビ大阪： 和風総本家 | 最高に美味しいお好み焼きの作り方](http://www.tv-osaka.co.jp/wafu/recipe/090817okonomi.html)
+* [テレビ大阪： 和風総本家 \| 最高に美味しいお好み焼きの作り方](http://www.tv-osaka.co.jp/wafu/recipe/090817okonomi.html)
 * [目がテン！ライブラリー お好み焼き](http://www.ntv.co.jp/megaten/library/date/14/02/0216.html)
