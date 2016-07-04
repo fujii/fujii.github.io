@@ -1,10 +1,21 @@
 ---
 layout: post
-title: "Windows で Emacs の Magit が遅すぎる"
+title: "(解決) Windows で Emacs の Magit が遅すぎる"
 description: ""
 category: 
 tags: [emacs, magit]
 ---
+
+2016-07-04 追記:
+
+解決しているということで、再度同じバージョンで確認しようとしたところ、そもそも再現できませんでした。
+なにかおかしな設定をしてしまったのかもしれません。
+十分に調査せずに嘘情報を流してしまったようです。お詫びします。
+
+* [NTEmacs で process-file が遅い問題は 24.4 で解決している模様](http://qiita.com/KazuSoap/items/be7fd3bf68ccdf942806)
+* [msysGit+Magitが遅い](http://qiita.com/pronard9627/items/43c4522efb68b3b67d7f)
+
+
 
 環境:
 

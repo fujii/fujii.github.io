@@ -5,7 +5,7 @@ title: "CMake Best Practice"
 tags : cmake
 ---
 
-## Do not define macro
+## Use function instread of macro
 
 Macro overrides variables in callers variable scope.
 Use function which has a own variable scope.
