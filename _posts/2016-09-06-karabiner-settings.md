@@ -3,7 +3,7 @@ layout: post
 title: "Karabiner で Windows 風キーバインド"
 description: ""
 category: 
-tags: [mac]
+tags: [macos, emacs]
 ---
 {% include JB/setup %}
 
