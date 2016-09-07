@@ -8,10 +8,15 @@ tags : [emacs]
 
 ## Issue
 
-Many reports of this problem:
+Emacs redraws sometimes partially when scrolling.
+I tested only on Windows host OS.
+There are many reports of this problem:
 
 * [Super User: ubuntu - Emacs does not redraw properly inside VirtualBox](http://superuser.com/questions/702494/)
 * [Oracle VM VirtualBox: #13687 (Emacs redraw issues with >1 Virtualbox CPU)](https://www.virtualbox.org/ticket/13687)
+
+I confirmed it happens even in 1 CPU configuration.
+Vim also has the similar problems:
 
 * [Stack Overflow: linux - Gvim redraw issues with Virtual Box and Windows 7 host](http://stackoverflow.com/questions/25018843/)
 * [Debian Bug report: #777567 - vim-gtk: Regions of text fail to redraw in gvim](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=777567)
@@ -40,7 +45,7 @@ EndSection
   (add-hook 'window-scroll-functions (lambda (&rest x) (run-with-idle-timer 0.5 nil 'redraw-display))))
 ~~~
 
-* Alt-Tab Alt-Tab
+* Switch to and back other window (Alt-Tab Alt-Tab)
 * Synchronous mode 
 
       emacs -xrm "emacs.synchronous: true"
