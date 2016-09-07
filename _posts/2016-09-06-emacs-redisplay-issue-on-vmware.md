@@ -2,7 +2,7 @@
 layout: post
 title: "Emacs redraw issue in X.org on VMWare and VirtualBox"
 category : 
-tags : [emacs]
+tags : [emacs, linux]
 ---
 {% include JB/setup %}
 
