@@ -27,6 +27,7 @@ Many reports of this problem:
 
 ~~~
 Section "Device"
+	Identifier "card 0"
 	Driver "fbdev"
 EndSection
 ~~~
