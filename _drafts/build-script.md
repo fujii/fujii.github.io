@@ -55,11 +55,15 @@ Make は常に restat を行うが、更新チェックは mtime の比較であ
 次回以降の差分ビルドでもそのコマンドは再度実行されてしまう。
 
 
-## Autoconf の3つの platform
+## Autoconf の3つの architecture type
 
-* --host
-* --build
-* --target
+architecture type は cpu-company-system の形式で表される。
+例えば x86_64-pc-linux-gnu。
+Autoconf 付属の `config.guess` を参照。
+
+* host (クロスコンパイルの対象プラットフォーム)
+* build (ビルドを実行するプラットフォーム)
+* target (GCC などコンパイラ等において出力となるプラットフォーム)
 
 呼び方はビルドシステムによって異なり (host, build, target) は GYP では (target, host, N/A) と呼ばれる。
 
@@ -92,9 +96,17 @@ CMake や Automake では Level 1 のクロスコンパイルでは、
 * 貧弱な言語
 * カスタム depfile が非サポート
 * クロスコンパイルのサポートが弱い
+* システム変数が大文字
+* 柔軟でない (機能が足りなくて困った時は CMake に手を入れるしかない)
 
 ## ビルドシステムの要件
 
 * ビルドスクリプトは一般的なプログラミング言語と同様に部品(関数やクラスなど)を組み立てて記述できなくてはならない。
 * 何度も実行するため速度が重視される
 * Unix での標準である GNU Build System のユースケースを満たす (https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)
+
+なんでもできるビルドシステムがある一方で、
+一部のビルドシステムの設計者は意図的にビルドシステムに制限を加える傾向がある。
+自由度を高めると好き勝手されて統一感がなくなるためだろう。
+こういう思想で設計されたビルドシステムはかゆいところに手が届かないものとなる。
+
