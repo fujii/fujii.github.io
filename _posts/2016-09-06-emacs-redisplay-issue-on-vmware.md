@@ -24,9 +24,30 @@ Vim also has the similar problems:
 
 ## Workarounds
 
-* Use compiz
-* Use Xephyr
-* Use X.Org fbdev driver
+### Use Cairo
+
+Emacs 25 supports Cairo by `configure --with-cario`.
+This is the best workaround.
+
+### Synchronous mode 
+
+      emacs -xrm "emacs.synchronous: true"
+
+### Call redraw-display after scroll
+
+~~~elisp
+(when (eq window-system 'x)
+  (add-hook 'window-scroll-functions (lambda (&rest x) (run-with-idle-timer 0.5 nil 'redraw-display))))
+~~~
+
+### Use compiz
+
+
+### Use Xephyr
+
+Xnest doesn't help.
+
+### Use X.Org fbdev driver
 
 `/etc/X11/xorg.conf`:
 
@@ -37,18 +58,14 @@ Section "Device"
 EndSection
 ~~~
 
-* Switch wallpaper images every seconds
-* Call redraw-display after scroll
+### Switch wallpaper images every seconds
 
-~~~elisp
-(when (eq window-system 'x)
-  (add-hook 'window-scroll-functions (lambda (&rest x) (run-with-idle-timer 0.5 nil 'redraw-display))))
-~~~
 
-* Switch to and back other window (Alt-Tab Alt-Tab)
-* Synchronous mode 
+### Switch to other window and back to Emacs
 
-      emacs -xrm "emacs.synchronous: true"
+Press Alt-Tab and Alt-Tab to switch window.
+
+
 
 ## Note
 
