@@ -61,6 +61,9 @@ Make は常に restat を行うが、更新チェックは mtime の比較であ
 * --build
 * --target
 
+呼び方はビルドシステムによって異なり (host, build, target) は GYP では (target, host, N/A) と呼ばれる。
+
+
 ## クロスコンパイルの３レベル
 
 * Level 0: システム等に存在するバイナリのコンパイラ・ツールのみを使用する
@@ -73,7 +76,25 @@ CMake や Automake では Level 1 のクロスコンパイルでは、
 まず build platform 用にビルドした後に、host platform 用にビルドする2段階の手順が必要である。
 
 
+## CMake の印象
+
+良いところ
+
+* Automake よりも速い
+* Ninja generator を使えばビルド時は高速
+* 一応、リストがある
+* Bourne Shell ほど double quote がいらない (`"${dir}/${name}"` は dir の中に空白があっても quote なしの `${dir}/${name}` でよい)
+* 開発が活発
+
+悪いところ
+
+* CMake 時はやや遅い ()
+* 貧弱な言語
+* カスタム depfile が非サポート
+* クロスコンパイルのサポートが弱い
+
 ## ビルドシステムの要件
 
 * ビルドスクリプトは一般的なプログラミング言語と同様に部品(関数やクラスなど)を組み立てて記述できなくてはならない。
 * 何度も実行するため速度が重視される
+* Unix での標準である GNU Build System のユースケースを満たす (https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)
