@@ -18,7 +18,7 @@ tags: [perl]
 
 ## list と array
 
-似て非なるもの。
+list と array は似て非なるもの。
 意図的に似せているのだろうし、自動的に変換されるので違いに気づきにくい。
 
 array は Perl のデータ構造の一つであり、スカラーのみを保持する。
@@ -38,19 +38,26 @@ $x = @{[4, 5]}; # 2
 
 `use strict;` では global symbol の変数は定義できないし、
 Perl 5 では typeglob を使うことはほぼないだろう。
+
 global な symbol table の entry が typeglob である。
-typeglob は hash で以下のキーを持ち、それらの値としてスカラーやリファレンスを持つ。
+typeglob は連想配列で以下のキーを持ち、それらの値としてスカラーやリファレンスを持つ。
 
 * SCALAR (スカラー $)
 * ARRAY (配列 @)
 * HASH (ハッシュ %)
 * CODE (コード &)
 * GLOB (型グロブ *)
-* IO (入出力)
+* IO (ファイルハンドル)
 
-`@rose` は `@{*rose{ARRAY}}` と同じであり `\@rose` は `*rose{ARRAY}` と同じである。
+typeglob のなかに GLOB があるのは混乱を招くが
+Advanced Perl Programming の[Figure 20.6: Glob value structure](http://docstore.mik.ua/orelly/perl/advprog/ch20_03.htm#ch20-38386)には GLOB は存在していないので、
+内部的には存在しないのだろう。
 
-以下の２つは似ているが注意が必要。
+global symbol において
+`@rose` は `@{*rose{ARRAY}}` と同じであり、
+`\@rose` は `*rose{ARRAY}` と同じである。
+
+以下の２つは似ているがやっていることは違うので注意が必要。
 
 ~~~perl
 # lily と rose が lily の typeglob が指すようになる
