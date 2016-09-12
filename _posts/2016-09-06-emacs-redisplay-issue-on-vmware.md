@@ -27,11 +27,15 @@ Vim also has the similar problems:
 ### Use Cairo
 
 Emacs 25 supports Cairo by `configure --with-cario`.
-This is the best workaround.
+This workaround does not hide the problem completely.
+This makes it less frequently.
+I think this is the best workaround.
 
 ### Synchronous mode 
 
       emacs -xrm "emacs.synchronous: true"
+
+This makes Emacs somewhat slow.
 
 ### Call redraw-display after scroll
 
@@ -42,6 +46,7 @@ This is the best workaround.
 
 ### Use compiz
 
+slow.
 
 ### Use Xephyr
 
