@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Perl 再入門"
+title: "Perl 5 再入門"
 tags: [perl]
 ---
 {% include JB/setup %}
