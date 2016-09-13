@@ -3,7 +3,7 @@ layout: post
 title: "2016 年の Cygwin 設定"
 description: ""
 category: 
-tags: []
+tags: [windows]
 ---
 {% include JB/setup %}
 
