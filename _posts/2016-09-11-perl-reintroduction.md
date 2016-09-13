@@ -34,7 +34,39 @@ $x = (4, 5); # 5
 $x = @{[4, 5]}; # 2
 ~~~
 
-## Typeglobs
+## lexical variable
+
+~~~perl
+my ($x, @x, %x);
+~~~
+3種類あるのが特異だが、それぞれ別個の変数である。
+lexical variable には `*x` のような typeglob はない。
+代入されていない場合はそれぞれ `undef`, 空の array, 空の hash で初期化される。
+
+一般的には `@x` は array の入れ物として説明されるが、
+別の考え方として内部的には array の reference の入れ物で
+`@` は array の reference を dereference するものと考えたほうが一貫性があり、理解しやすい場合がある。
+`\@x` はその内部的な array の reference そのものである。
+typeglob とも一貫する。
+
+lexical variable は関係ないが、以下のように undef を array として dereference して代入することができる。
+dereference すると空の array の reference が代入されていると考えられる。
+
+~~~perl
+my ($x, %y);
+@$x = (1, 2, 3);
+@{$y{rose}} = (4, 5, 6);
+~~~
+ただし、以下と同等なのでこちらのほうが素直である。
+
+~~~perl
+my ($x, %y);
+$x = [1, 2, 3];
+$y{rose} = [4, 5, 6];
+~~~
+
+
+## Typeglob
 
 `use strict;` では global symbol の変数は定義できないし、
 Perl 5 では typeglob を使うことはほぼないだろう。
