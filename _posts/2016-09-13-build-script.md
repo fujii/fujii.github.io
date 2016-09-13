@@ -5,8 +5,9 @@ tags: [cmake]
 ---
 {% include JB/setup %}
 
-* 主に C と C++ のビルドスクリプト
+* 主に C と C++ のビルドスクリプトを想定
 * CMake + Ninja が 2016 年の OSS 界の標準ビルドシステム
+* ビルドシステムの選定の参考になるように
 
 ## 依存関係
 
@@ -80,7 +81,7 @@ CMake や Automake では Level 1 のクロスコンパイルでは、
 まず build platform 用にビルドした後に、host platform 用にビルドする2段階の手順が必要である。
 
 
-## CMake の印象
+## CMake の特徴
 
 良いところ
 
@@ -92,9 +93,11 @@ CMake や Automake では Level 1 のクロスコンパイルでは、
 
 悪いところ
 
-* CMake 時はやや遅い ()
+* CMake 時はやや遅い
 * 貧弱な言語
-* カスタム depfile が非サポート
+* 連想配列がない (変数で代用する `${assoc_${var}}`)
+* 関数に返り値がない (変数名を渡してそれに代入する)
+* add_custom_command で depfile が非サポート
 * クロスコンパイルのサポートが弱い
 * システム変数が大文字
 * 柔軟でない (機能が足りなくて困った時は CMake に手を入れるしかない)
