@@ -65,8 +65,10 @@ for (keys %y) {
 `@x` が array の reference の入れ物でそれを dereference したものと、
 そして `\@x` がその reference と考えると、ループ毎に違う reference になるのが理解しやすい。
 
-lexical variable は関係ないが、以下のように undef を array として dereference して代入することができる。
-dereference すると空の array の reference が代入されていると考えられる。
+## Autovivification
+
+undef を array や hash として dereference すると自動的に
+空の array や hash の reference が代入される。
 
 ~~~perl
 my ($x, %y);
