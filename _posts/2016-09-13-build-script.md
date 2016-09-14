@@ -5,6 +5,7 @@ tags: [cmake]
 ---
 {% include JB/setup %}
 
+* 書きかけ
 * 主に C と C++ のビルドスクリプトを想定
 * CMake + Ninja が 2016 年の OSS 界の標準ビルドシステム
 * ビルドシステムの選定の参考になるように
@@ -101,6 +102,8 @@ CMake や Automake では Level 1 のクロスコンパイルでは、
 * クロスコンパイルのサポートが弱い
 * システム変数が大文字
 * 柔軟でない (機能が足りなくて困った時は CMake に手を入れるしかない)
+
+* CMakeCache.txt の問題。CMakeLists.txt を変更したが、CMakeCache.txt に古い値がキャッシュされているために発生する問題。CMake 的には CMakeCache.txt はビルドオプションを保存しておいて、 CMakeCache.txt は cmake-gui などで編集するもの。 git pull や svn up で repository の最新を取得した後の差分ビルドの場合の問題。
 
 ## ビルドシステムの要件
 
