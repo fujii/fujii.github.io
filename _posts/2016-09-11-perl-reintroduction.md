@@ -48,6 +48,22 @@ lexical variable には `*x` のような typeglob はない。
 `@` は array の reference を dereference するものと考えたほうが一貫性があり、理解しやすい場合がある。
 `\@x` はその内部的な array の reference そのものである。
 typeglob とも一貫する。
+例えば次のコードを考える。
+
+~~~perl
+for (keys %y) {
+    my @x;
+	(...)
+    $y{$_} = \@x;
+}
+~~~
+
+ループの毎に `@x` は新しい空の array で初期化される。
+では `\@x` はループの毎に同じか違うか。
+答えはループ毎に違うものになるである。
+`@x` が array の入れ物であると考えると、それへの reference は毎度同じなるようにも思える。
+`@x` が array の reference の入れ物でそれを dereference したものと、
+そして `\@x` がその reference と考えると、ループ毎に違う reference になるのが理解しやすい。
 
 lexical variable は関係ないが、以下のように undef を array として dereference して代入することができる。
 dereference すると空の array の reference が代入されていると考えられる。
