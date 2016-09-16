@@ -10,6 +10,13 @@ tags : [emacs, linux]
 
 Emacs redraws sometimes partially when scrolling.
 I tested only on Windows host OS.
+
+Following error messages are output in `/var/log/Xorg.0.log` when this problem occurs.
+
+~~~
+[  1278.046] (EE) vmwgfx_scanout_update: failed to send dirty (-22, Invalid argument)
+~~~
+
 There are many reports of this problem:
 
 * [Super User: ubuntu - Emacs does not redraw properly inside VirtualBox](http://superuser.com/questions/702494/)
