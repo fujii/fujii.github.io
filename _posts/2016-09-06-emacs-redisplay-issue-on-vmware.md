@@ -36,7 +36,6 @@ Vim also has the similar problems:
 Emacs 25 supports Cairo by `configure --with-cario`.
 This workaround does not hide the problem completely.
 This makes it less frequently.
-I think this is the best workaround.
 
 ### Synchronous mode 
 
@@ -79,7 +78,7 @@ Press Alt-Tab and Alt-Tab to switch window.
 
 
 
-## Note
+## Investigation
 
 libX11 API calls can be observed by `ltrace`:
 
@@ -93,3 +92,34 @@ The following API are called frequently during scroll.
     emacs->XDrawImageString(0x306e800, 0x28000b0, 0x3b47ee0, 296) = 0
     emacs->XSetClipMask(0x306e800, 0x3b47ee0, 0, 0)             = 1
     emacs->XSetClipRectangles(0x306e800, 0x3b47ee0, 0, 0)       = 1
+
+
+I created a test program and filed [a bug report](https://bugs.freedesktop.org/show_bug.cgi?id=97836).
+
+
+## Apply a patch and compile the driver
+
+I attached [my patch](https://bugs.freedesktop.org/show_bug.cgi?id=97836#c2).
+
+~~~sh
+dnf download --source xorg-x11-drv-vmware
+sudo dnf builddep xorg-x11-drv-vmware
+aunpack xorg-x11-drv-vmware-13.0.2-11.20150211git8f0cf7c.fc24.src.rpm
+aunpack xorg-x11-drv-vmware-13.0.2-11.20150211git8f0cf7c.fc24.src/xf86-video-vmware-20150211.tar.bz2
+cd xf86-video-vmware-20150211
+patch -p0 ~/tmp/vmwgfx-dirty-union.patch
+autoreconf -isv
+./configure --prefix=$HOME/opt
+make 
+make install 
+~~~
+Create `/etc/X11/xorg.conf` with the following content.
+
+~~~
+Section "Files"
+    ModulePath "/home/fujii/opt/lib/xorg/modules,/usr/lib64/xorg/modules"
+EndSection
+~~~
+Log out and log in (lightdm restarts X server).
+
+See the log `/var/log/Xorg.0.log` to check your driver is loaded.
