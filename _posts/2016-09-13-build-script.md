@@ -14,8 +14,25 @@ tags: [cmake]
 
 ### explicit dependency と implicit dependency
 
-implicit dependency は gcc -MMD と Makefile の `-include` で読み込む。
+explicit dependency はビルドスクリプトに明示的に書いた dependency。
+
+implicit dependency は gcc -MMD で .d ファイルを生成して Makefile の `-include` で読み込む dependency。
+incremental build するのに必要である。
+
 ヘッダが rename されると、ビルドがコケる問題がある。
+例えば、以下のような .d ファイルが生成された場合。
+
+~~~make
+a.o: a.c a.h
+~~~
+a.h が b.h に rename されると a.h ファイルを生成する rule がなくて make が失敗する。
+この問題は以下のように .d を作りなおしたものを include すれば解決できるように思う。
+
+~~~make
+a.o: a.c a.h
+a.c:
+a.h:
+~~~
 
 ### link dependency と source dependency
 
