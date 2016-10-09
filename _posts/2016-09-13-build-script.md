@@ -43,8 +43,11 @@ libx と liby のソースは同時にコンパイル可能である。
 
 ### order-only dependency
 
-Ninja の order-only dependency がある。
+Make や Ninja には order-only dependency (order-only prerequisites) がある。
 これは依存ファイルが更新されてもオブジェクトファイルは更新しない依存ファイルを指定する機能である。
+
+Make のドキュメントでは出力ファイルを置くディレクトリを作成する例が挙げられている。
+https://www.gnu.org/software/make/manual/make.html#Prerequisite-Types
 
 共有ライブラリにリンクする場合、共有ライブラリが更新されても基本的にそのアプリケーションをリビルドする必要がない。
 なぜならば、共有ライブラリは本質的に API 互換が保たれるし、新しい API が追加された場合もアプリケーションがその新しい API を使用するように変更すればそのアプリケーションはリビルドされるからである。
