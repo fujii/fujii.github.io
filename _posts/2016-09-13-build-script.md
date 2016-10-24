@@ -118,7 +118,7 @@ CMake や Automake では Level 1 のクロスコンパイルでは、
 * 貧弱な言語
 * 連想配列がない (変数で代用する `${assoc_${var}}`)
 * 関数に返り値がない (変数名を渡してそれに代入する)
-* add_custom_command で depfile が非サポート
+* add_custom_command で depfile が非サポート (v3.7 で Ninja generator のみ対応)
 * クロスコンパイルのサポートが弱い
 * システム変数が大文字
 * 柔軟でない (機能が足りなくて困った時は CMake に手を入れるしかない)
