@@ -8,7 +8,7 @@ tags : [emacs, linux]
 
 ## Issue
 
-Emacs redraws sometimes partially when scrolling.
+Emacs redraws sometimes partially while scrolling in X.org on VMWare or VirtualBox.
 I tested only on Windows host OS.
 
 Following error messages are output in `/var/log/Xorg.0.log` when this problem occurs.
@@ -22,14 +22,17 @@ There are many reports of this problem:
 * [Super User: ubuntu - Emacs does not redraw properly inside VirtualBox](http://superuser.com/questions/702494/)
 * [Oracle VM VirtualBox: #13687 (Emacs redraw issues with >1 Virtualbox CPU)](https://www.virtualbox.org/ticket/13687)
 
-I confirmed it happens even in 1 CPU configuration.
-Vim also has the similar problems:
+I confirmed it happens even in one CPU configuration.
+
+Vim seems to have the similar problems:
 
 * [Stack Overflow: linux - Gvim redraw issues with Virtual Box and Windows 7 host](http://stackoverflow.com/questions/25018843/)
 * [Debian Bug report: #777567 - vim-gtk: Regions of text fail to redraw in gvim](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=777567)
 * [Super User: vim - gvim redraw failure](http://superuser.com/questions/343599/)
 
 ## Workarounds
+
+There are several workarounds I tried.
 
 ### Use Cairo
 
@@ -52,11 +55,13 @@ This makes Emacs somewhat slow.
 
 ### Use compiz
 
-slow.
+Using compiz solves the problem.
+Unfortunately, compiz makes painting slow.
 
 ### Use Xephyr
 
-Xnest doesn't help.
+Xephyr also solve the problem.
+On the other hand, Xnest doesn't help.
 
 ### Use X.Org fbdev driver
 
@@ -71,10 +76,11 @@ EndSection
 
 ### Switch wallpaper images every seconds
 
+This triggers repainting whole scrren every seconds.
 
 ### Switch to other window and back to Emacs
 
-Press Alt-Tab and Alt-Tab to switch window.
+Press Alt-Tab and Alt-Tab to switch window to repaint.
 
 
 

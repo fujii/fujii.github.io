@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[書評] ウォール街のランダム・ウォーカー　<原著第10版>"
+title: "ウォール街のランダム・ウォーカー"
 description: ""
 category: 
 tags: [book]
