@@ -107,6 +107,8 @@ I created a test program and filed [a bug report](https://bugs.freedesktop.org/s
 
 I attached [my patch](https://bugs.freedesktop.org/show_bug.cgi?id=97836#c2).
 
+This is the install steps for Fedora.
+
 ~~~sh
 dnf download --source xorg-x11-drv-vmware
 sudo dnf builddep xorg-x11-drv-vmware
@@ -129,3 +131,16 @@ EndSection
 Log out and log in (lightdm restarts X server).
 
 See the log `/var/log/Xorg.0.log` to check your driver is loaded.
+
+This is for Ubuntu 17.4:
+
+~~~sh
+sudo apt-get install devscripts
+sudo apt-get build-dep xserver-xorg-video-vmware
+apt-get source xserver-xorg-video-vmware
+cd xserver-xorg-video-vmware-13.2.1
+patch -p0 < ../vmwgfx-dirty-union.patch
+debuild -i -us -uc -b
+cd ..
+sudo dpkg -i xserver-xorg-video-vmware_13.2.1-1build1_amd64.deb
+~~~
