@@ -3,7 +3,7 @@ layout: post
 title: "How to reproduce the segmentation faults of Ryzen bug"
 description: ""
 category: 
-tags: []
+tags: [linux]
 ---
 {% include JB/setup %}
 
@@ -28,9 +28,9 @@ Check your following UEFI BIOS settings.
 
 uOP cache setting can be found in `Advanced > AMD CBS > Zen Common Options > Opcache Control` in my UEFI.
 
-This crashes happen not only on Linux. 
-Sat reported he could reproduce this [on Windows Subsystems for Linux](https://community.amd.com/thread/215773?start=75&tstart=0).
-Oshimaya did [on NetBSD](https://twitter.com/oshimyja/status/872099591759507457).
+This crashes happen not only on Linux,
+but on [Windows Subsystems for Linux](https://community.amd.com/thread/215773?start=75&tstart=0)
+and on [NetBSD](https://twitter.com/oshimyja/status/872099591759507457).
 Actually Linux is the most reported. This article uses it.
 
 Check [ASLR (Address space layout randomization)](https://en.wikipedia.org/wiki/Address_space_layout_randomization) is enabled.
@@ -101,10 +101,96 @@ Satoru Takeuchi created [a useful script](https://gist.github.com/satoru-takeuch
 
 ## Postmortem Examination
 
-There is a particular pattern in Ryzen's crashes.
-Let's check the generated coredumps.
+There is a particular pattern in some Ryzen's crashes.
 According to [Hideki EIRAKU's investigation](http://www.e-hdk.com/diary/d201706c.html#20-2),
-Ryzen seems to execute 64 bytes ahead instructions than where RIP register is pointing.
+Ryzen seems to jump to 64 bytes ahead instructions than where RIP register is pointing.
+
+[Here](https://gist.github.com/fujii/a5411f523b0072beae22cda0f3858e58) is my coredump of bash.
+Let's check the coredump.
+
+Current `rip` was `0x4370d0`.
+
+~~~
+rip            0x4370d0	0x4370d0 <execute_builtin+720>
+~~~
+SIGSEGV was raised while copying `eax` to the stack immediately after returning from `run_unwind_frame`.
+
+~~~
+   0x00000000004370cb <+715>:	call   0x465ef0 <run_unwind_frame>
+=> 0x00000000004370d0 <+720>:	mov    eax,DWORD PTR [rsp+0x8]
+~~~
+
+`rsp` was `0x7ffe79c8f4d0`.
+
+~~~
+rsp            0x7ffe79c8f4d0	0x7ffe79c8f4d0
+~~~
+Here is the stack dump:
+
+~~~
+(gdb) x/32g 0x7ffe79c8f450
+0x7ffe79c8f450:	0x0000000000000001	0xe375df75c9fcd400
+0x7ffe79c8f460:	0x0000000000000000	0x00000000018da5c8
+0x7ffe79c8f470:	0x00000000004659c0	0xe375df75c9fcd400
+0x7ffe79c8f480:	0x0000000000000000	0x0000000000000000
+0x7ffe79c8f490:	0x0000000000000001	0x0000000000000000
+0x7ffe79c8f4a0:	0x0000000000000000	0x0000000000000000
+0x7ffe79c8f4b0:	0x0000000000484d10	0x0000000000465f10
+0x7ffe79c8f4c0:	0x0000000000000001	0x00000000004370d0
+0x7ffe79c8f4d0:	0x00000000018dd548	0x0000000000000000
+0x7ffe79c8f4e0:	0x0000000000000001	0x000000000180e5c8
+0x7ffe79c8f4f0:	0x0000000000000000	0x000000000180e5c8
+0x7ffe79c8f500:	0x0000000000484d10	0x0000000000000000
+0x7ffe79c8f510:	0x0000000000000000	0x0000000000000000
+0x7ffe79c8f520:	0x0000000000000000	0x0000000000439426
+0x7ffe79c8f530:	0x0000000000000001	0x00000000ffffffff
+0x7ffe79c8f540:	0x00000000018ddea8	0x00000001008dc8c8
+~~~
+`[rsp-8]` was `0x00000000004370d0`.
+This was the return address which the preceding `call` pushed.
+
+Here is the code of `run_unwind_frame`:
+
+~~~
+(gdb) disassemble run_unwind_frame
+Dump of assembler code for function run_unwind_frame:
+   0x0000000000465ef0 <+0>:	cmp    QWORD PTR [rip+0x2a8a78],0x0        # 0x70e970 <unwind_protect_list>
+   0x0000000000465ef8 <+8>:	je     0x465f17 <run_unwind_frame+39>
+   0x0000000000465efa <+10>:	push   rbx
+   0x0000000000465efb <+11>:	mov    ebx,DWORD PTR [rip+0x2a8a83]        # 0x70e984 <interrupt_immediately>
+   0x0000000000465f01 <+17>:	mov    DWORD PTR [rip+0x2a8a79],0x0        # 0x70e984 <interrupt_immediately>
+   0x0000000000465f0b <+27>:	call   0x465aa0 <unwind_frame_run_internal>
+   0x0000000000465f10 <+32>:	mov    DWORD PTR [rip+0x2a8a6e],ebx        # 0x70e984 <interrupt_immediately>
+   0x0000000000465f16 <+38>:	pop    rbx
+   0x0000000000465f17 <+39>:	repz ret 
+~~~
+`pop rbx` was executed just before returning this function.
+This value has been recoded in the stack.
+`[rsp-16]` was 1.
+And `rbx` was `1`.
+
+~~~
+rbx            0x1	0x1
+~~~
+
+The stack and th registers look consistent.
+But, SIGSEGV was raised. It's a Mystery!
+
+Let's use the hypothesis here.
+
+The return address was `0x4370d0` then `rip` was `0x4370d0`.
+But, if Ryzen would execute 64byte ahead instructions, what would happen?
+The address was `0x4370b0`.
+This is the instruction which is disassembled forcibly.
+
+~~~
+(gdb) x/i 0x4370b0
+   0x4370b0 <execute_builtin+688>:	add    BYTE PTR [rax],al
+~~~
+
+Copying the content where `rax` was pointing to a register.
+`rax` was `0`.
+SIGSEGV would be raised if this instruction was really executed.
 
 * ToDo: How to install dbg symbol pkg
 * ToDo: How to use gdb
