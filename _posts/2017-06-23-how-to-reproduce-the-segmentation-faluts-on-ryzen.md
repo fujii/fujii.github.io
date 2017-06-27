@@ -29,7 +29,7 @@ Check your following UEFI BIOS settings.
 uOP cache setting can be found in `Advanced > AMD CBS > Zen Common Options > Opcache Control` in my UEFI.
 
 This crashes happen not only on Linux,
-but on [Windows Subsystems for Linux](https://community.amd.com/thread/215773?start=75&tstart=0)
+but also on [Windows Subsystems for Linux](https://community.amd.com/thread/215773?start=75&tstart=0)
 and on [NetBSD](https://twitter.com/oshimyja/status/872099591759507457).
 Actually Linux is the most reported. This article uses it.
 
@@ -78,6 +78,9 @@ Make the coredump size unlimited to get full coredumps.
 $ ulimit -c unlimited
 ~~~
 
+And, install debug info packages.
+
+
 ## Compile repeatedly
 
 Let's compile repeatedly until it will fail.
@@ -103,7 +106,7 @@ Satoru Takeuchi created [a useful script](https://gist.github.com/satoru-takeuch
 
 There is a particular pattern in some Ryzen's crashes.
 According to [Hideki EIRAKU's investigation](http://www.e-hdk.com/diary/d201706c.html#20-2),
-Ryzen seems to jump to 64 bytes ahead instructions than where RIP register is pointing.
+Ryzen seems to execute 64 bytes ahead instructions than where RIP register is pointing immediately after jump.
 
 [Here](https://gist.github.com/fujii/a5411f523b0072beae22cda0f3858e58) is my coredump of bash.
 Let's check the coredump.
@@ -113,7 +116,7 @@ Current `rip` was `0x4370d0`.
 ~~~
 rip            0x4370d0	0x4370d0 <execute_builtin+720>
 ~~~
-SIGSEGV was raised while copying `eax` to the stack immediately after returning from `run_unwind_frame`.
+SIGSEGV was raised while copying `[rsp+0x8]` to `eax` immediately after returning from `run_unwind_frame`.
 
 ~~~
    0x00000000004370cb <+715>:	call   0x465ef0 <run_unwind_frame>
@@ -177,23 +180,28 @@ The stack and th registers look consistent.
 But, SIGSEGV was raised. It's a Mystery!
 
 Let's use the hypothesis here.
-
-The return address was `0x4370d0` then `rip` was `0x4370d0`.
+The return address was `0x4370d0` and current `rip` was `0x4370d0`.
 But, if Ryzen would execute 64byte ahead instructions, what would happen?
-The address was `0x4370b0`.
-This is the instruction which is disassembled forcibly.
+The address was `0x437090`.
+Here is the disassembled instruction.
 
 ~~~
-(gdb) x/i 0x4370b0
-   0x4370b0 <execute_builtin+688>:	add    BYTE PTR [rax],al
+(gdb) x/i 0x437090
+   0x437090 <execute_builtin+656>:	add    BYTE PTR [rax],al
 ~~~
 
-Copying the content where `rax` was pointing to a register.
 `rax` was `0`.
-SIGSEGV would be raised if this instruction was really executed.
+If this instruction was really executed, `0` was the address where this SIGSEGV was occurred.
 
-* ToDo: How to install dbg symbol pkg
-* ToDo: How to use gdb
+~~~
+(gdb) p $_siginfo._sifields._sigfault.si_addr
+$3 = (void *) 0x6dfb44
+~~~
+Unfortunately, It was `0x6dfb44`.
+Surprisingly, no registers stores this value.
+I don't know where this value came from.
+
+Anyway, the hypothesis doesn't seem to match in this case.
 
 
 ## Links
