@@ -29,9 +29,10 @@ Check your following UEFI BIOS settings.
 uOP cache setting can be found in `Advanced > AMD CBS > Zen Common Options > Opcache Control` in my UEFI.
 
 This crashes happen not only on Linux,
-but also on [Windows Subsystems for Linux](https://community.amd.com/thread/215773?start=75&tstart=0)
-and on [NetBSD](https://twitter.com/oshimyja/status/872099591759507457).
-Actually Linux is the most reported. This article uses it.
+but also [on Windows Subsystems for Linux](https://community.amd.com/thread/215773?start=75&tstart=0)
+and [on NetBSD](https://twitter.com/oshimyja/status/872099591759507457).
+Actually Linux is the most reported.
+This article uses it.
 
 Check [ASLR (Address space layout randomization)](https://en.wikipedia.org/wiki/Address_space_layout_randomization) is enabled.
 It's been reported that disabling ASLR significantly reduces the probability.
@@ -40,7 +41,8 @@ It's been reported that disabling ASLR significantly reduces the probability.
  $ sysctl kernel.randomize_va_space
 kernel.randomize_va_space = 2
 ~~~
-It's already enabled if the value is 2. Enable it otherwise.
+It's already enabled if the value is 2.
+Enable it otherwise.
 
 ~~~
 $ sudo sysctl kernel.randomize_va_space=2
@@ -71,6 +73,10 @@ $ gcc -no-pie -fno-pie a.c
 $ readelf -h a.out | grep Type
   Type:                              EXEC (Executable file)
 ~~~
+
+`gcc` version 4 seems better than version 5 or later.
+Because the core component of compilation is the single executable `cc1` in `gcc-4`,
+but the shared library `libcc1.so` in `gcc-5` which is of course PIC.
 
 Make the coredump size unlimited to get full coredumps.
 
@@ -202,6 +208,32 @@ Surprisingly, no registers stores this value.
 I don't know where this value came from.
 
 Anyway, the hypothesis doesn't seem to match in this case.
+
+After writing above text, he posted [his investigation of my coredump](http://www.e-hdk.com/diary/d201707a.html#03-1).
+He guesses `rip` was slipped to `0x465f10` which is in `run_unwind_frame`.
+
+~~~
+(gdb) disassemble run_unwind_frame
+Dump of assembler code for function run_unwind_frame:
+   0x0000000000465ef0 <+0>:	cmp    QWORD PTR [rip+0x2a8a78],0x0        # 0x70e970 <unwind_protect_list>
+   0x0000000000465ef8 <+8>:	je     0x465f17 <run_unwind_frame+39>
+   0x0000000000465efa <+10>:	push   rbx
+   0x0000000000465efb <+11>:	mov    ebx,DWORD PTR [rip+0x2a8a83]        # 0x70e984 <interrupt_immediately>
+   0x0000000000465f01 <+17>:	mov    DWORD PTR [rip+0x2a8a79],0x0        # 0x70e984 <interrupt_immediately>
+   0x0000000000465f0b <+27>:	call   0x465aa0 <unwind_frame_run_internal>
+   0x0000000000465f10 <+32>:	mov    DWORD PTR [rip+0x2a8a6e],ebx        # 0x70e984 <interrupt_immediately>
+   0x0000000000465f16 <+38>:	pop    rbx
+   0x0000000000465f17 <+39>:	repz ret 
+~~~
+This `mov` instruction is about to copy `ebx` to `[rip+0x2a8a6e]`.
+`rip` was `0x4370d0`,
+`rip+0x2a8a6e` is `0x6dfb3e`,
+and this `mov` instruction size is 6,
+`0x6dfb3e + 6` is `0x6dfb44`.
+Bingo!
+
+
+Both least six significant bits of `rip` (`0x4370d0`) and slipped destination address (`0x465f10`) are equal.
 
 
 ## Links
