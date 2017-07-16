@@ -14,6 +14,7 @@ But, it's difficult to reproduce the segmentation faults due to the
 low probability and the uncleared reproducibility conditions.
 I'd like to summarize the best practices in this post.
 
+This kind problem is known as [Sig11 problem](http://bitwizard.nl/sig11).
 
 ## Preparations
 
@@ -112,12 +113,12 @@ Satoru Takeuchi created [a useful script](https://gist.github.com/satoru-takeuch
 
 There is a particular pattern in some Ryzen's crashes.
 According to [Hideki EIRAKU's investigation](http://www.e-hdk.com/diary/d201706c.html#20-2),
-Ryzen seems to execute 64 bytes ahead instructions than where RIP register is pointing immediately after jump.
+Ryzen seems to execute 64 bytes ahead instructions than where RIP register is pointing.
 
 [Here](https://gist.github.com/fujii/a5411f523b0072beae22cda0f3858e58) is my coredump of bash.
 Let's check the coredump.
 
-Current `rip` was `0x4370d0`.
+Current program counter `rip` was `0x4370d0`.
 
 ~~~
 rip            0x4370d0	0x4370d0 <execute_builtin+720>
@@ -129,7 +130,7 @@ SIGSEGV was raised while copying `[rsp+0x8]` to `eax` immediately after returnin
 => 0x00000000004370d0 <+720>:	mov    eax,DWORD PTR [rsp+0x8]
 ~~~
 
-`rsp` was `0x7ffe79c8f4d0`.
+The stack pointer `rsp` was `0x7ffe79c8f4d0`.
 
 ~~~
 rsp            0x7ffe79c8f4d0	0x7ffe79c8f4d0
