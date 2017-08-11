@@ -14,7 +14,13 @@ But, it's difficult to reproduce the segmentation faults due to the
 low probability and the uncleared reproducibility conditions.
 I'd like to summarize the best practices in this post.
 
-This kind problem is known as [Sig11 problem](http://bitwizard.nl/sig11).
+This kind of problem is known as [Sig11 problem](http://bitwizard.nl/sig11).
+
+This is a different problem with the system reboot problem
+[on DragonFly BSD](http://gitweb.dragonflybsd.org/dragonfly.git/commitdiff/b48dd28447fc8ef62fbc963accd301557fd9ac20)
+and [on FreeBSD](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=219399).
+
+Finally, [AMD confirms this issue](http://www.phoronix.com/scan.php?page=news_item&px=Ryzen-Segv-Response).
 
 ## Preparations
 
@@ -30,8 +36,9 @@ Check your following UEFI BIOS settings.
 uOP cache setting can be found in `Advanced > AMD CBS > Zen Common Options > Opcache Control` in my UEFI.
 
 This crashes happen not only on Linux,
-but also [on Windows Subsystems for Linux](https://community.amd.com/thread/215773?start=75&tstart=0)
-and [on NetBSD](https://twitter.com/oshimyja/status/872099591759507457).
+but also [on Windows Subsystems for Linux](https://community.amd.com/thread/215773?start=75&tstart=0),
+[on NetBSD](https://twitter.com/oshimyja/status/872099591759507457)
+and [on FreeBSD](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=221029).
 Actually Linux is the most reported.
 This article uses it.
 
