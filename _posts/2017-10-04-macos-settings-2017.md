@@ -35,7 +35,16 @@ Karabiner-Elements 11 からは旧バージョンの設定が使用できない�
 
 ## Homebrew
 
-(あとで書く)
+好きなのをインストールする。
+
+    brew install aspell binutils coreutils editorconfig findutils zsh
+    brew install --with-cocoa emacs
+
+パスを通す。
+
+    PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+    PATH=$(brew --prefix findutils)/libexec/gnubin:$PATH
+
 
 ## その他
 
