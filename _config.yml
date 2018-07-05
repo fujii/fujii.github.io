@@ -17,7 +17,7 @@ author :
 #  feedburner : feedname
 timezone: Asia/Tokyo
 
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-feed
 
