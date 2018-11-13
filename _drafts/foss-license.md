@@ -18,6 +18,10 @@ GPLv3 以降は permissive な MIT, BSD ライセンスなどが増加中らし�
 
 * [GPLの採用率、加速度的に減少中](http://opensource.srad.jp/story/11/12/19/0919237/)
 
+新しい記事。
+
+* [Why has GPL license usage dropped dramatically? | The decline of GPL? | Opensource.com](https://opensource.com/article/17/2/decline-gpl)
+
 GPLv3 以降 Apple は macOS の GPL が適用されたプログラムを徐々に排除している。GPLv3 にバージョンアップしたものは最新版を取り入れていない。
 
 * [Apple’s great GPL purge | mathew's web site](http://meta.ath0.com/2012/02/05/apples-great-gpl-purge/)
