@@ -28,7 +28,7 @@ tags:
 * 2011/10月 購入 ￥46,256
 * 2017/3月 交換用バッテリー購入
 
-最近ではときたま裏で何らかの処理が走ってマウスカーソルが固まるようになって、これがストレスになってきた。
+最近ではときたま裏で何らかの処理が走って数秒ほど固まるようになって、これがストレスになってきた。
 Windows PC としてはスペック的には買い換えたほうがいいのだが、たいして使用してないのと、
 Android タブレットなんかとくらべると十分なスペックにも思えるので Linux で延命できるか試してみる。
 
@@ -52,22 +52,25 @@ Linux desktop を日本語で使うはトラブルのもとなのだが、今回
 Gnome 用の language-selector-gnome をインストールした。
 XFCE はこんな感じで開発者が必要としないあれこれが足りてない。
 
-Xubuntu にするとマウスカーソルが固まることはなくなって、快適である。
+Xubuntu にすると固まることはなくなって、快適である。
 気になるのは Chrome でスクロールしているときの描画が汚い。
 移行した直後なので気になるが、しばらくしたら忘れてしまいそう。
 概して Linux の device driver は Windows のものよりも低品質なので、そのためだろうか。
 
-あと Windows キーが使えない。
-[解決方法](https://qiita.com/kazoo04/items/6fb6eeb16e1213c1c15b)を見つけたが、これだと Windows key + L でロックとかできない。
+あと Windows キーでメニューが開かない。
+[解決方法](https://qiita.com/kazoo04/items/6fb6eeb16e1213c1c15b)を見つけたが、これだと Windows key + 文字キー が変なことになる。
+デフォルトで Windows キー + W で Web Browser が起動するので、Windows key + 文字キー を足していくのが無難か。
+Windows キー + R でローンチャーっぽいのが表示されるが、なんか使いづらい。
+Alt + F2 のもなんか使いづらい。
+結局は Windows キー + T でターミナルを開いてコマンド叩くのが XFCE 流なのだろうか。
 
 トラックパッドの設定は２本指スクロールを選択しているはずなのに、なぜかエッジスクロールと２本指スクロールの両方が有効になっている。
 トラックパッドのエッジに触れるとスクロールしてしまうためキーボード入力中に誤操作が頻発する。
 
-低DPIだとフォントのアンチエイリアスが汚い。埋め込みビットマップフォントにしたほうがいいかもしれない。
-
-他にも elementary OS や TDE も気になる。
+他にも elementary OS や TDE, Budgie Desktop も気になる。
 * [elementary OS](https://elementary.io/)
 * [妻のパソコンを Windows 7 から Windows 10 にアップグレードしたら使いにくいとキレられたので Linux にした件](https://eng-blog.iij.ad.jp/archives/2430)
+* [Budgie Desktop](https://github.com/solus-project/budgie-desktop)
 
 それと、Chromium OS や Android-x86 も気になる。
 いつか試したい。
