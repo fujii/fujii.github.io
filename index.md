@@ -5,15 +5,13 @@ tagline:
 ---
 {% include JB/setup %}
 
-GitHub Pages はじめました。
-
-* {{ site.author.email }}
-* Twitter: [@{{ site.author.twitter }}](https://twitter.com/{{ site.author.twitter }})
+* [{{ site.author.email }}](email:{{ site.author.email }})
+* [Twitter](https://twitter.com/{{ site.author.twitter }})
 * [Facebook](https://www.facebook.com/fujii.hironori)
 * [GitHub](https://github.com/fujii)
 * [Google+](https://plus.google.com/108766616282956994806)
 
-## Blog
+## Random Notes
 
 <ul class="posts">
   {% for post in site.posts %}
