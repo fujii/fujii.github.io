@@ -37,11 +37,14 @@ Emacs や GCC も授業で知った。
 インストールが面倒だった。
 
 * https://web.archive.org/web/*/http://www.pje.linux.or.jp/
+* https://ja.wikipedia.org/wiki/Project-JE
 
 1999年1月(19歳)。
 1999年1月24日に発売された Linux Japan の付録 CD-ROM に Vine Linux 0.9 が収録されていた。
 
 * [ASCII.jp：Project Vine、『Vine Linux 0.9beta7』をテスト公開](https://ascii.jp/elem/000/000/300/300155/index.html)
+* https://web.archive.org/web/19990208010748/http://vine.flatout.org/
+* https://ja.wikipedia.org/wiki/Vine_Linux
 
 以前に使っていた PJE に比べると、格段に便利で感動した。
 
@@ -60,7 +63,7 @@ Debian 2.2 (Potato) だったような気がする。
 2008年6月(28歳)。
 当時人気があった Ubuntu に移行した。
 購入した液晶ディスプレイが Debian で不調だったが、Ubuntu では問題なかったため。
-Ubuntu 8.04 の茶色の背景に描かれた鶴は印象的でよく覚えている。
+Ubuntu 8.04 の[茶色の背景に描かれた鶴](https://www.google.com/search?q=Ubuntu+8.04&source=lnms&tbm=isch)は印象的でよく覚えている。
 
 その後はずっと Ubuntu で、今は Ubuntu 18.10 を使っている。
 Linux デスクトップを使いだしてもう 20 年経つ。
