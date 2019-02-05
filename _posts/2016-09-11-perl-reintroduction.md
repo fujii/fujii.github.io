@@ -3,7 +3,6 @@ layout: post
 title: "Perl 5 再入門"
 tags: [perl]
 ---
-{% include JB/setup %}
 
 人生において一体何度 Perl に入門したのだろうか。
 何度勉強しても次に必要になるときにはすっかり忘れている。

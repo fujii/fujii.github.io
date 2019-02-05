@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: 
 ---
-{% include JB/setup %}
 
 VirtualBox is Oracle's excellent open-source virtual machine product.
 I was quite comfortable with it until version 6.0.

@@ -3,7 +3,6 @@ layout: post
 title: "ビルドスクリプト論"
 tags: [cmake]
 ---
-{% include JB/setup %}
 
 * 書きかけ
 * 主に C と C++ のビルドスクリプトを想定

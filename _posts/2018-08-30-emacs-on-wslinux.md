@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [linux, emacs]
 ---
-{% include JB/setup %}
 
 巷で流行の WSL に移行しました。
 

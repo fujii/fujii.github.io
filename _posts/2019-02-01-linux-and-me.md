@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: 
 ---
-{% include JB/setup %}
 
 まずは Linux を使い始める以前の話から。
 

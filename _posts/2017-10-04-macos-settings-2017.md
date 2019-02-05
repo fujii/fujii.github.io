@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [macos, emacs]
 ---
-{% include JB/setup %}
 
 ## Karabiner-Elements の設定
 

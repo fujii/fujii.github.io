@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [windows]
 ---
-{% include JB/setup %}
 
 Cygwin を使うとその遅さや fork の不安定さ、Posix の不完全さによりずっと不満な状態が続く。
 数年ごとに脱 Cygwin をするものの結局 Cygwin なしの Windows 生活も不便だったことを思い出す。

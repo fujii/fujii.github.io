@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [macos, emacs]
 ---
-{% include JB/setup %}
 
 private.xml
 

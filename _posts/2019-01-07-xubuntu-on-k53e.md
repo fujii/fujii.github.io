@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: 
 ---
-{% include JB/setup %}
 
 7年前に婚約者(現妻)と同棲するときに彼女の古い PC を捨てて、二人で折半して買った思い出のノート PC である。
 別に私の PC があったが、それには Windows をインストールしないため、Windows PC が必要だった。

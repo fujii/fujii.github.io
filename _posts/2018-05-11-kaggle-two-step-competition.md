@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: []
 ---
-{% include JB/setup %}
 
 Kaggle の 2ステージコンペとは何かと 2ステージコンペで起きたふたつの事件を説明します。
 

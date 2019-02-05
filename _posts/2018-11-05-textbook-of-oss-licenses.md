@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: 
 ---
-{% include JB/setup %}
 
 近年のソフトウェア業界は OSS なしでは成り立たず、
 多くのソフトウェア開発者がなんらかの形で業務で OSS と関わっていると思う。

@@ -5,7 +5,6 @@ description: ""
 category: 
 tags: [linux]
 ---
-{% include JB/setup %}
 
 It's been reported that sporadic segmentation faults were occurred on Linux/Ryzen
 under heavy CPU loads especially during parallel-compiling large
