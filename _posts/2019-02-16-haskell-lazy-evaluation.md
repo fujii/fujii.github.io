@@ -24,3 +24,8 @@ tags:
 > モナドもグッド、しかし、遅延評価はうんこ。
 
 そのときは某匿名掲示板に[コメントした](http://pc8.5ch.net/test/read.cgi/tech/1149263630/)が同意は得られなかった。
+今更ではあるが、自分の頭が悪くて遅延評価を使いこなせなかったわけではなかったことを確認できて嬉しい。
+
+今調べるとこの人は GHC の偉い人と一緒に論文を書いてる人だった。
+
+* [HsDebug: Debugging Lazy Programs by Not Being Lazy](http://ennals.org/rob/archive/intel/) by Robert Ennals and Simon Peyton Jones.
