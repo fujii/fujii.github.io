@@ -56,5 +56,5 @@ first-party cookie を設定するために無駄に redirect されるように
 いくつかリンクを貼っておく。
 
 * [サードパーティCookieの歴史と現状 Part1 前提知識の共有](http://d.hatena.ne.jp/mala/20111125/1322210819)
-* [Google、SafariのサードパーティCookie問題で2250万ドルの制裁金を支払う方向へ。 | スラド IT](https://it.srad.jp/story/12/07/12/0253208/)
-* [Cookieを使わずにユーザーを追跡する仕組みが普及しつつある | スラド IT](https://it.srad.jp/story/14/07/22/0613210/)
+* [Google、SafariのサードパーティCookie問題で2250万ドルの制裁金を支払う方向へ。 \| スラド](https://it.srad.jp/story/12/07/12/0253208/)
+* [Cookieを使わずにユーザーを追跡する仕組みが普及しつつある \| スラド](https://it.srad.jp/story/14/07/22/0613210/)
