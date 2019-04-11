@@ -65,6 +65,13 @@ xrdb ~/.Xresources
 xterm -ls
 ~~~
 
+## APT のミラーサーバの設定
+
+* [repository - How can I get apt to use a mirror close to me, or choose a faster mirror? - Ask Ubuntu](https://askubuntu.com/a/37754)
+
+[18.04 LTS (Bionic Beaver) 用 sources.list](https://gist.githubusercontent.com/fujii/547da696c67294955ab984da25c329ef/raw/bb778388611266878f42225e8b5fe1f38157ec38/sources.list) を /etc/apt/sources.list に置く。
+
+
 ## start コマンド
 
 Windows の start や Cygwin の cygstart のようなコマンド。下のページのものを拝借した。
