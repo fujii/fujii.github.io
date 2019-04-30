@@ -71,6 +71,7 @@ xterm -ls
 
 [18.04 LTS (Bionic Beaver) 用 sources.list](https://gist.githubusercontent.com/fujii/547da696c67294955ab984da25c329ef/raw/bb778388611266878f42225e8b5fe1f38157ec38/sources.list) を /etc/apt/sources.list に置く。
 
+もしくは software-properties-gtk で設定する。
 
 ## start コマンド
 
