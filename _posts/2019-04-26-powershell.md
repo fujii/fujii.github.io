@@ -36,3 +36,10 @@ Remove-Item Alias:wget -Force
 * [powershell チートシート - Qiita](https://qiita.com/jca02266/items/a0c71ae90d055ab3893c)
 * [公式リファレンス](https://docs.microsoft.com/en-us/powershell/scripting/overview)
 * [Microsoft.PowerShell.Core の about](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/)
+
+落とし穴が多いので注意。
+
+* [PowerShellの"罠"と呼ばれるモノについて - しばたテックブログ](https://blog.shibata.tech/entry/2018/05/31/214439)
+* [nightroman/PowerShellTraps: Collection of PowerShell traps and oddities](https://github.com/nightroman/PowerShellTraps)
+* [PowerShell Gives You Wrongs](https://gist.github.com/igeta/e5c0d8e81c732d55a919b97cbdaf459a)
+* [PowerShell の stderr の落とし穴]({% post_url 2019-05-13-powershell-stderr-errorrecord %})
