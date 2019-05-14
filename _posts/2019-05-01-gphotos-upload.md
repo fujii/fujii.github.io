@@ -9,7 +9,7 @@ tags:
 やりたいことは
 
 * ディレクトリ名をアルバム名として Google Photos にアップロード
-* デジカメの画像 JPG と動画 MTS に対応
+* デジカメの画像 (.JPG) と動画 (.MTS, .MP4) に対応
 * 「元のサイズ」は容量を消費するので「高品質」でアップロードしたい
 
 「高品質」でのアップロードはどうもAPI が対応していないらしい。
@@ -17,7 +17,12 @@ tags:
 
 GitHub を探すと様々なプログラムがあるのだが、なかなか要求を満たすものがなかった。
 
-とりあず落ち着いたのは [gphotos-upload](https://github.com/eshmu/gphotos-upload) 。
+[gphotos-upload](https://github.com/eshmu/gphotos-upload)
+
+* ディレクトリ名をアルバム名にしない
+* ライセンスが不明
+
+とりあえずはこれに落ち着いた。
 ディレクトリ名をアルバム名にするシェルスクリプトを組み合わせることにした。
 
 ~~~sh
@@ -26,12 +31,11 @@ for dir in "$@"; do
 done
 ~~~
 
-## 他の候補
-
 [gphotos-uploader-cli](https://github.com/nmrshll/gphotos-uploader-cli)
 
 * ディレクトリ名をアルバム名にする
-* MTS がスキップされる。
+* 動画がスキップされる。
+* 大文字の拡張子だと deleteAfterUpload が機能しない
 * go get でエラーが出ている
 
 ~~~
