@@ -25,6 +25,10 @@ Safari の Intelligent Tracking Prevention 2.1 を調べたので自分の理解
 * [Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/)
 * John Wilander 氏の [tweet #1](https://twitter.com/johnwilander/status/1100386313025445888), [tweet #2](https://twitter.com/johnwilander/status/1098948746337906689)
 
+Mac port の実装は CorePrediction というのを利用していて、
+学習済みのモデルは [corePrediction_model](https://trac.webkit.org/browser/webkit/trunk/Source/WebKit/Resources/ResourceLoadStatistics/corePrediction_model?rev=245315) で、
+[ResourceLoadStatisticsClassifierCocoa.cpp](https://trac.webkit.org/browser/webkit/trunk/Source/WebKit/Platform/classifier/cocoa/ResourceLoadStatisticsClassifierCocoa.cpp?rev=245315) にてロードしている。
+
 
 ## Google Analytics のユーザ識別
 
