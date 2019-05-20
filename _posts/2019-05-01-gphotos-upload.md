@@ -8,11 +8,12 @@ tags:
 ゴールデンウィークなので写真と動画の整理をする。
 やりたいことは
 
-* ディレクトリ名をアルバム名として Google Photos にアップロード
+* ディレクトリ名をアルバム名として Google Photos にアップロードしたい
 * デジカメの画像 (.JPG) と動画 (.MTS, .MP4) に対応
 * 「元のサイズ」は容量を消費するので「高品質」でアップロードしたい
 
-「高品質」でのアップロードは [Google Photos APIs](https://developers.google.com/photos/) が対応していない。
+[Google Photos APIs](https://developers.google.com/photos/) は「高品質」でのアップロードはできない。
+あらかじめ縮小する必要がありそう。
 [設定](https://photos.google.com/settings) で [容量の開放] をすると「元のサイズ」から「高品質」に縮小されるので、これでしのぐことにする。
 
 GitHub を探すと様々なプログラムがあるのだが、なかなか要求を満たすものがなかった。
