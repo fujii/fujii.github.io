@@ -38,3 +38,6 @@ WebKit は WTF と bmalloc が static library で JavaScriptCore やそれ以外
 
 * [156831 – Heap corruption is detected when destructing JSGlobalObject](https://bugs.webkit.org/show_bug.cgi?id=156831)
 * [179914 – Duplicated symbols in libjavascriptcoregtk and libwebkit2gtk can cause crashes in production builds](https://bugs.webkit.org/show_bug.cgi?id=179914)
+
+cairo の API はコンテキストを引数に取るので一見する問題なさそうに思ってしまうが、
+cairo も [static は変数を持っていて](https://github.com/freedesktop/cairo/blob/bab53d91a8543e2ddb15f9dce98ebb3f9bcd5d22/src/cairo-path.c#L54)、[そのアドレスの比較をしている](https://github.com/freedesktop/cairo/blob/bab53d91a8543e2ddb15f9dce98ebb3f9bcd5d22/src/cairo-path.c#L368)ためこの問題に遭遇したことがある。
