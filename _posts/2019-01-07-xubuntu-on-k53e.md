@@ -44,8 +44,6 @@ XFCE はユーザ=開発者といった雰囲気で、私にとっては必要�
 Ubuntu の mini.iso で Xubuntu Minimal をインストールしようとしたら、インストーラーが途中で止まらなくなった。
 適当に選択項目を変更して再チャレンジで成功した。
 
-https://help.ubuntu.com/community/Installation/MinimalCD
-
 Linux desktop を日本語で使うはトラブルのもとなのだが、今回は入れざるをえない。
 インストールを英語でやったら、インストール後に XFCE で日本語を追加する方法が存在しなかった。
 Gnome 用の language-selector-gnome をインストールした。
@@ -65,6 +63,7 @@ Alt + F2 のもなんか使いづらい。
 
 トラックパッドの設定は２本指スクロールを選択しているはずなのに、なぜかエッジスクロールと２本指スクロールの両方が有効になっている。
 トラックパッドのエッジに触れるとスクロールしてしまうためキーボード入力中に誤操作が頻発する。
+[Disable touchpad while typing](https://docs.xfce.org/xfce/xfce4-settings/mouse) という設定があった。
 
 他にも elementary OS や TDE, Budgie Desktop も気になる。
 * [elementary OS](https://elementary.io/)
