@@ -1,7 +1,7 @@
 ---
 layout: post
 category:
-title: "CMake Best Practice"
+title: "CMake Best Practices"
 tags : cmake
 ---
 
