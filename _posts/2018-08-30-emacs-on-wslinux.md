@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "WSLinux で Emacs 環境構築"
+title: "WSL で Emacs 環境構築"
 description: ""
 category: 
 tags: [linux, emacs]
