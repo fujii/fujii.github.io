@@ -26,7 +26,7 @@ iTunes for Windows is using both 32bit and 64bit version of AppleWin port.
 Only 32bit version of WebKitSupportLibrary.zip and WebKitAuxiliaryLibrary.zip is publicly available at the moment.
 So, you can compile only 32bit version.
 
-The latest built binary can be downloaded from Buildbot.
+The latest built binary can be downloaded from Buildbot. iTunes needs to be installed on your PC.
 
 * [How to run the latest WebKit ( Safari ) on Windows](https://medium.com/@alSkachkov/how-to-load-the-latest-webkit-on-windows-962a9219c1e1)
 
@@ -44,7 +44,7 @@ It supports both WebKit1 and WebKit2, but it plans to remove WebKit1.
 It supports only 64bit.
 Its JavaScriptCore supports LLInt Asm, baseline JIT and DFG JIT, but FTL JIT.
 
-The latest built binary can be downloaded from Buildbot. iTunes needs to be installed on your PC.
+The latest built binary can be downloaded from Buildbot.
 
 * [Download build artifacts from Buildbot](https://trac.webkit.org/wiki/BuildingCairoOnWindows#DownloadbuildartifactsfromBuildbot)
 
