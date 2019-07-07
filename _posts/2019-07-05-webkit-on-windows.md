@@ -10,7 +10,7 @@ Sometimes I see someone asking about WebKit on Windows.
 
 * [Is there anyone working on bringing WebKit2 to Windows?](https://www.reddit.com/r/WebKit/comments/a4zu94/is_there_anyone_working_on_bringing_webkit2_to/)
 
-I'd like to summarize the current situation.
+I'd summarize the current situation.
 
 ## AppleWin port
 
@@ -22,8 +22,8 @@ It supports only WebKit1.
 And, WebKit thread is not separated from UI thread.
 The browser becomes unresponsive while running JavaScript benchmarks.
 
-iTunes for Windows is using both 32bit and 64bit version of AppleWin port.
-Only 32bit version of WebKitSupportLibrary.zip and WebKitAuxiliaryLibrary.zip is publicly available at the moment.
+Although iTunes for Windows is using both 32bit and 64bit version of AppleWin port,
+only 32bit version of WebKitSupportLibrary.zip and WebKitAuxiliaryLibrary.zip is publicly available at the moment.
 So, you can compile only 32bit version.
 
 The latest built binary can be downloaded from Buildbot. iTunes needs to be installed on your PC.
@@ -74,3 +74,7 @@ But I don't know.
 ## WPE WebKit
 
 WPE WebKit is a well maintained upstream port, but doesn't support Windows.
+
+## FTW port
+
+[FTW port](https://bugs.webkit.org/show_bug.cgi?id=199206) is a new upstream Windows port which uses Direct2D.
