@@ -61,9 +61,7 @@ It seems that Accelerated compositing doesn't work on Windows.
 
 WebKitGTK is a well maintained upstream port, but doesn't support Windows.
 So, Cygwin and Cygwin/X are needed to run.
-Cygwin has epiphany and midori packages.
-
-It seems that a env var `WEBKIT_DISABLE_COMPOSITING_MODE=1` needs to be set to disable accelerated compositing.
+Cygwin has epiphany and midori packages, but very old.
 
 
 ## JavaFX WebKit
