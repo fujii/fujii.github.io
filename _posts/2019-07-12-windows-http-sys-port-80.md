@@ -100,3 +100,6 @@ By default, HTTP.sys listens `0.0.0.0` and `[::]`, which means all IPv4 and IPv6
 For example, by invoking `netsh http add iplisten 127.0.0.2`, you can change it to only IPv4 127.0.0.2.
 `netsh http show iplisten` reports the current status.
 You can restore the default setting by `netsh http delete iplisten 127.0.0.2`.
+
+* [HTTP Server API: IP Listen List](https://docs.microsoft.com/en-us/windows/win32/http/ip-listen-list)
+* [Netsh commands for HTTP: add iplisten](https://docs.microsoft.com/en-us/windows/win32/http/add-iplisten)
