@@ -8,7 +8,7 @@ tags:
 * [windows 7 - Why is System process listening on Port 80? - Super User](https://superuser.com/q/43307/424146)
 * [iis - Port 80 is being used by SYSTEM (PID 4), what is that? - Stack Overflow](https://stackoverflow.com/q/1430141/2691131)
 
-Here is the result of `netstat -abo` or `netstat -ao \| findstr :80`.
+Here is the result of `netstat -abo` or `netstat -ao | findstr :80`.
 
 ~~~
 (...)
@@ -24,7 +24,7 @@ Here is the result of `netstat -abo` or `netstat -ao \| findstr :80`.
 HTTP.sys implements [HTTP Server API](https://docs.microsoft.com/en-us/windows/win32/http/http-api-start-page) to listen the ports.
 There are two ways to solve the issue.
 
-## Disable service which is using HTTP.sys
+## Disable services which are using HTTP.sys
 
 You can get which services is using HTTP Server API by invoking `netsh http show servicestate`.
 In the following example, pid 2668 is registering `HTTP://+:80/116B50EB-ECE2-41AC-8429-9F9E963361B7/`.
@@ -89,7 +89,7 @@ Here is the excerpt of `netsh http show urlacl`.
 
 * [How can I determine why the System process is listening on port 80? \| The Old New Thing](https://devblogs.microsoft.com/oldnewthing/20180703-00/?p=99145)
 
-## Change listening port of HTTP.sys
+## Change listening addresses of HTTP.sys
 
 By default, HTTP.sys listens 0.0.0.0 and [::], which means all IPv4 and IPv6 addresses.
 For example, by invoking `netsh http add iplisten 127.0.0.2`, you can change it to only IPv4 127.0.0.2.
