@@ -79,6 +79,7 @@ Windows の start や Cygwin の cygstart のようなコマンド。下のペ�
 
 * [WSL で start コマンドを使う – HIGASHI Taiju – Medium](https://medium.com/@h.taiju/use-the-start-command-on-wsl-bea3d82725e1)
 
+`wslu` というパッケージに `wslview` というコマンドが追加された。 `sudo apt install ubuntu-wsl` でインストールして置くといいみたい。
 
 ## Mozc の設定
 
