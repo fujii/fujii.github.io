@@ -16,7 +16,7 @@ I'd summarize the current situation.
 
 [AppleWin port](https://trac.webkit.org/wiki/BuildingOnWindows) is a upstream port.
 It uses the same components with Mac port, Core Graphics and Core Foundation, and etc.
-But, WebKitSupportLibrary.zip is [not redistribute](https://developer.apple.com/opensource/internet/webkit_sptlib_agree.html).
+But, WebKitSupportLibrary.zip is [not redistributable](https://developer.apple.com/opensource/internet/webkit_sptlib_agree.html).
 
 It supports only WebKit1.
 And, WebKit thread is not separated from UI thread.
@@ -37,9 +37,7 @@ Theoretically, it's possible to use 64bit version of WebKit.dll included in iTun
 ## WinCairo port
 
 [WinCairo port](https://trac.webkit.org/wiki/BuildingCairoOnWindows) is the only one redistributable upstream Windows port.
-It supports both WebKit1 and WebKit2, but it plans to remove WebKit1.
-
-* [Bug 194904 – \[WinCairo\] Remove WebKitLegacy support](https://bugs.webkit.org/show_bug.cgi?id=194904)
+It supports both WebKit1 and WebKit2, but it [plans to remove WebKit1](https://bugs.webkit.org/show_bug.cgi?id=194904).
 
 It supports only 64bit.
 Its JavaScriptCore supports LLInt Asm, baseline JIT and DFG JIT, but FTL JIT.
