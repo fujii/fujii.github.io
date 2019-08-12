@@ -12,5 +12,3 @@ tags:
 
 * [fileformat.info: Unicode Character Search](https://www.fileformat.info/info/unicode/char/search.htm)
 * [fileformat.info: Emoji](https://www.fileformat.info/info/emoji/index.htm)
-
-* [UnicodeLookup.com](https://unicodelookup.com/)
