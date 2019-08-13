@@ -5,7 +5,7 @@ description: ""
 tags: 
 ---
 
-ゴールデンウィークなので写真と動画の整理をする。
+溜まった写真と動画の整理をする。
 やりたいことは
 
 * ディレクトリ名をアルバム名として Google Photos にアップロードしたい
@@ -20,6 +20,7 @@ GitHub を探すと様々なプログラムがあるのだが、なかなか要�
 
 [gphotos-upload](https://github.com/eshmu/gphotos-upload)
 
+* Python
 * ディレクトリ名をアルバム名にしない
 * ライセンスが不明
 
@@ -34,26 +35,16 @@ done
 
 [gphotos-uploader-cli](https://github.com/nmrshll/gphotos-uploader-cli)
 
+* Go
 * ディレクトリ名をアルバム名にする
-* 動画がスキップされる。
-* 大文字の拡張子だと deleteAfterUpload が機能しない
-* go get でエラーが出ている
-
-~~~
-package google.golang.org/api/photoslibrary/v1: cannot find package "google.golang.org/api/photoslibrary/v1" in any of:
-        /usr/lib/go-1.10/src/google.golang.org/api/photoslibrary/v1 (from $GOROOT)
-        /home/fujii/go/src/google.golang.org/api/photoslibrary/v1 (from $GOPATH)
-~~~
-
-どうやら、[２週間前に API が削除されている](https://github.com/googleapis/google-api-go-client/commit/33b7e862cd15f81bfba1c95a4931360da0fece8c)。
+* 古い写真をアップロードすると1写真ごとに1アルバムになる [issue #19](https://github.com/gphotosuploader/gphotos-uploader-cli/issues/19)
 
 [upload-gphotos](https://github.com/3846masa/upload-gphotos)
 
-* 公式 API を使っていない
 * ディレクトリ名をアルバム名にしない
-* 動作が怪しい。途中で止まる。
+* 公式 API を使っていないためか、動作が怪しい気がする。途中で止まる。
 
 [gpup](https://github.com/int128/gpup)
 
-* これも Go。
+* Go
 * ディレクトリ名をアルバム名にしない
