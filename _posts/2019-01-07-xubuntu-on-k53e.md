@@ -50,9 +50,8 @@ Gnome 用の language-selector-gnome をインストールした。
 XFCE はこんな感じで開発者が必要としないあれこれが足りてない。
 
 Xubuntu にすると固まることはなくなって、快適である。
-気になるのは Chrome でスクロールしているときの描画が汚い。
-移行した直後なので気になるが、しばらくしたら忘れてしまいそう。
-概して Linux の device driver は Windows のものよりも低品質なので、そのためだろうか。
+気になるのは Chrome でカーソルキー上下を押しっぱなしでスクロールしているときの描画が汚い。
+Settings → Window Manager Tweaks → Compositor → Syncronizing drawing to vertical blank を有効にすると改善する。
 
 あと Windows キーでメニューが開かない。
 [解決方法](https://qiita.com/kazoo04/items/6fb6eeb16e1213c1c15b)を見つけたが、これだと Windows key + 文字キー が変なことになる。
