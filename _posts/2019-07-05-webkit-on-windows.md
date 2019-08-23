@@ -74,3 +74,24 @@ WPE WebKit is a well maintained upstream port, but doesn't support Windows.
 ## FTW port
 
 [FTW port](https://bugs.webkit.org/show_bug.cgi?id=199206) is a new upstream Windows port which uses Direct2D.
+
+## MontionMark 1.1
+
+I found [a StackOverflow question of WinCairo performance](https://stackoverflow.com/q/57610729).
+Here are my benchmark results.
+
+                 | MontionMark 1.1
+--------------------|-------------------
+AppleWin r249040 (32bit) AC         | 8.39
+WinCairo r249042 (64bit) WK2 non-AC | 136.66
+WinCairo r249042 (64bit) WK1 AC     | 68.99
+QtWebKit (64bit) WK1 non-AC         | 115.18
+Firefox 68.0.2 (64bit)              | 272.57
+Firefox 68.0.2 (64bit) no-GPU       | 105.12
+
+* Windows 10 version 1903 with 150% device scale factor display
+* https://s3-us-west-2.amazonaws.com/archives.webkit.org/wincairo-x86_64-release/249042.zip
+* https://s3-us-west-2.amazonaws.com/archives.webkit.org/win-x86_64-release/249040.zip (This is a 32bit version with regardless to the URL)
+* otter-browser-win64-1.0.81-weekly272-setup.exe
+
+Here are [screenshots](https://ibb.co/album/mwxUdv).
