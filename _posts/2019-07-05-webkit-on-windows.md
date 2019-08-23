@@ -80,8 +80,8 @@ WPE WebKit is a well maintained upstream port, but doesn't support Windows.
 I found [a StackOverflow question of WinCairo performance](https://stackoverflow.com/q/57610729).
 Here are my benchmark results.
 
-                 | MontionMark 1.1
---------------------|-------------------
+Browser                             | MontionMark 1.1
+------------------------------------|-------------------
 AppleWin r249040 (32bit) AC         | 8.39
 WinCairo r249042 (64bit) WK2 non-AC | 136.66
 WinCairo r249042 (64bit) WK1 AC     | 68.99
