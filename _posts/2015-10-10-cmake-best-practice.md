@@ -5,6 +5,8 @@ title: "CMake Best Practices"
 tags : cmake
 ---
 
+I'd like to collect CMake Best Practices from the Internet.
+
 ## Use function instread of macro
 
 Macro overrides variables in callers variable scope.
