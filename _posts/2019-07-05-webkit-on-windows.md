@@ -92,8 +92,8 @@ Firefox 68.0.2 (64bit)              | 272.57
 Firefox 68.0.2 (64bit) no-GPU       | 105.12
 
 * Windows 10 version 1903 with 150% device scale factor display
-* AppleWin: https://s3-us-west-2.amazonaws.com/archives.webkit.org/wincairo-x86_64-release/249042.zip
-* WinCairo: https://s3-us-west-2.amazonaws.com/archives.webkit.org/win-x86_64-release/249040.zip (This is a 32bit version with regardless to the URL)
+* AppleWin: https://s3-us-west-2.amazonaws.com/archives.webkit.org/win-x86_64-release/249040.zip (This is a 32bit version with regardless to the URL)
+* WinCairo: https://s3-us-west-2.amazonaws.com/archives.webkit.org/wincairo-x86_64-release/249042.zip
 * QtWebKit: otter-browser-win64-1.0.81-weekly272-setup.exe with manually adjusting zooming level
 
 Here are [screenshots](https://ibb.co/album/mwxUdv).
