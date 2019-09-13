@@ -74,7 +74,7 @@ But I don't know.
 
 ## FTW port
 
-[FTW port](https://bugs.webkit.org/show_bug.cgi?id=199206) is a new upstream Windows port which uses Direct2D and DirectDraw.
+[FTW port](https://bugs.webkit.org/show_bug.cgi?id=199206) is a new upstream Windows port which uses Direct2D and DirectWrite.
 
 ## MontionMark 1.1
 
