@@ -51,3 +51,21 @@ Then, I downgraded to version 5.2, and everything is working fine.
 * `Xorg.0.log` shows `vmware` Xorg driver is used.
 
 Here is [the full log](https://gist.github.com/fujii/76ee6699f493c10729ba9658bdad3448).
+
+
+## VirtualBox 6.0.12
+
+In 2019-10-16, I tested VirtualBox 6.0.12 with Xubuntu 19.04.
+The situation gets worse.
+
+* VMSVGA:
+    * It's easy to crash VirtualBox by closing chrome window
+    * Seems [this issue](https://forums.virtualbox.org/viewtopic.php?f=6&t=94657).
+    * bad performance while using OpenGL (chrome or glmark2)
+* VBoxSVGA: bad performance
+
+I found Oracle's blog article, and tested it with Ubuntu 18.04 too.
+VMSVGA works nicely, but VBoxSVGA doesn't.
+I didn't try installing xserver-xorg-video-vmware-hwe-18.04.
+
+* [Oracle VM VirtualBox 6.0: 3D Acceleration for Ubuntu 18.04 Guest | Simon Coter Blog](https://blogs.oracle.com/scoter/oracle-vm-virtualbox-6-3d-acceleration-for-ubuntu-1804-guest)
