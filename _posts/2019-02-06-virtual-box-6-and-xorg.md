@@ -68,4 +68,4 @@ I found Oracle's blog article, and tested it with Ubuntu 18.04 too.
 VMSVGA works nicely, but VBoxSVGA doesn't.
 I didn't try installing xserver-xorg-video-vmware-hwe-18.04.
 
-* [Oracle VM VirtualBox 6.0: 3D Acceleration for Ubuntu 18.04 Guest | Simon Coter Blog](https://blogs.oracle.com/scoter/oracle-vm-virtualbox-6-3d-acceleration-for-ubuntu-1804-guest)
+* [Oracle VM VirtualBox 6.0: 3D Acceleration for Ubuntu 18.04 Guest \| Simon Coter Blog](https://blogs.oracle.com/scoter/oracle-vm-virtualbox-6-3d-acceleration-for-ubuntu-1804-guest)
