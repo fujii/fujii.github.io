@@ -35,3 +35,15 @@ stderr の元の文字列が見たいときは stdout に redirect して ToStri
 * [Don't wrap stderr as ErrorRecord by SteveL-MSFT · Pull Request #5190 · PowerShell/PowerShell](https://github.com/PowerShell/PowerShell/pull/5190)
 * [StdErr is wrapped as ErrorRecord producing undesired effects · Issue #3813 · PowerShell/PowerShell](https://github.com/PowerShell/PowerShell/issues/3813)
 * [Inconsistent handling of native command stderr · Issue #3996 · PowerShell/PowerShell](https://github.com/PowerShell/PowerShell/issues/3996)
+
+
+## Invoke-NativeApplication
+
+面倒なことを解決してくれる
+[Invoke-NativeApplication](https://github.com/mnaoumov/Invoke-NativeApplication) を見つけた。
+
+* 外部コマンドを実行し stdout と stderr の各行を文字列のリストで返す
+* 文字列には IsError プロパティがセットされる
+* `$LastExitCode` に基づき例外を投げる
+* `-IgnoreExitCode` と `-AllowedExitCodes` 引数あり
+* あいにく stderr に出力があると エラーとして `$Error` に記録が残る
