@@ -49,4 +49,3 @@ stderr の元の文字列が見たいときは stdout に redirect して ToStri
 * `$LastExitCode` に基づき例外を投げる
 * `-IgnoreExitCode` と `-AllowedExitCodes` 引数あり
 * あいにく stderr に出力があると エラーとして `$Error` に記録が残る
-* ビルドなど実行時間が長く処理経過を出力するコマンドの実行には向かない
