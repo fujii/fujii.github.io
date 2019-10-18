@@ -39,11 +39,14 @@ stderr の元の文字列が見たいときは stdout に redirect して ToStri
 
 ## Invoke-NativeApplication
 
-面倒なことを解決してくれる
-[Invoke-NativeApplication](https://github.com/mnaoumov/Invoke-NativeApplication) を見つけた。
+[Invoke-NativeApplication](https://github.com/mnaoumov/Invoke-NativeApplication) 
+を使うと良さそう。
+特に `$ErrorActionPreference = "stop"` しているスクリプトで有効と思われる。
 
+* `$ErrorActionPreference` を `Continue` にしてコマンドを実行する
 * 外部コマンドを実行し stdout と stderr の各行を文字列のリストで返す
 * 文字列には IsError プロパティがセットされる
 * `$LastExitCode` に基づき例外を投げる
 * `-IgnoreExitCode` と `-AllowedExitCodes` 引数あり
 * あいにく stderr に出力があると エラーとして `$Error` に記録が残る
+* ビルドなど実行時間が長く処理経過を出力するコマンドの実行には向かない
