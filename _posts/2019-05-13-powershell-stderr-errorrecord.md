@@ -5,18 +5,18 @@ description: ""
 tags: 
 ---
 
-PowerShell では外部プログラムの標準エラー (stderr) の扱いで大きな落とし穴があるので、まとめておく。
+PowerShell では外部プログラムの標準エラー (stderr) を error stream に流すために大きな落とし穴があるので、まとめておく。
 
 * stderr を redirect して外部プログラムを起動し、 stderr に出力すると一行ごとに ErrorRecord でラップされる
 * stdout への redirect `2>&1` 、ファイルへの redirect `2> a.txt`、`$null` への redirect `2>$null` で ErrorRecord でのラップがされる
 * 外部プログラムの stderr を stdout やファイルに redirect すると、 `NativeCommandError` と出力される
 * stderr に出力があるとエラーとみなされ `$?` は `$false` になり、エラーは `$Error` に記録される。
-* `$ErrorActionPreference = "stop"` していると、処理が止まる
+* `$ErrorActionPreference = "stop"` していると、stderr に一行目が出力されると処理が止まる
 * PowerShell スクリプトで 外部プログラムの起動において stderr を redirect していなくても、その PowerShell スクリプトの stderr が redirect されると ErrorRecord でのラップがされる
 * `$null` への redirect では stderr は捨てられるが、エラーが発生したことは `$Error` に記録される。
 
 対策としては、`$?` ではなく `$LastExitCode` をチェックする。
-stderr の元の文字列が見たいときは stdout に redirect して ToString() する `*>&1 |% { "$_" }`。
+stderr の元の文字列が見たいときは stdout に redirect して ToString() する `2>&1 |% { "$_" }`。
 
 * [$LastExitCode=0, but $?=False in PowerShell. Redirecting stderr to stdout gives NativeCommandError - Stack Overflow](https://stackoverflow.com/q/10666101/2691131)
 * [ Capture program stdout and stderr to separate variables - Stack Overflow](https://stackoverflow.com/q/24222088/2691131)
@@ -46,6 +46,6 @@ stderr の元の文字列が見たいときは stdout に redirect して ToStri
 * `$ErrorActionPreference` を `Continue` にしてコマンドを実行する
 * 外部コマンドを実行し stdout と stderr の各行を文字列のリストで返す
 * 文字列には IsError プロパティがセットされる
-* `$LastExitCode` に基づき例外を投げる
+* `$LastExitCode` に基づき例外を投げる (例外よりも Write-Error で error stream に出力したほうがよいかも)
 * `-IgnoreExitCode` と `-AllowedExitCodes` 引数あり
 * あいにく stderr に出力があると エラーとして `$Error` に記録が残る
