@@ -68,3 +68,5 @@ function Invoke-NativeCommand($command) {
 親プロセスである PowerShell の stdout と stderr を継承して欲しいのだが。
 この方法では PowerShell スクリプトの stdout と stderr をファイルにリダイレクトしても、
 Start-Process で起動したプロセスはコンソールに出力されるようである。
+
+* [PowerShell: Running Executables - TechNet Articles](https://social.technet.microsoft.com/wiki/contents/articles/7703.powershell-running-executables.aspx)
