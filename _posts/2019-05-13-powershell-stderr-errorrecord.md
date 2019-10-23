@@ -49,3 +49,22 @@ stderr の元の文字列が見たいときは stdout に redirect して ToStri
 * `$LastExitCode` に基づき例外を投げる (例外よりも Write-Error で error stream に出力したほうがよいかも)
 * `-IgnoreExitCode` と `-AllowedExitCodes` 引数あり
 * あいにく stderr に出力があると エラーとして `$Error` に記録が残る
+
+## Start-Process
+
+Start-Process を使うと、PowerShell が stdout や stderr を一行ずつ処理するのを回避でき、処理されずにコンソールに出力されるようである。
+
+~~~powershell
+function Invoke-NativeCommand($command) {
+    $process = Start-Process $command -ArgumentList $args -Wait -NoNewWindow -PassThru
+    if ($process.ExitCode -ne 0) {
+       Write-Error -Category InvalidResult -Message "$command exits with $($process.ExitCode)"
+    }
+}
+~~~
+
+私がやりたかったことはこれで十分だった。
+欲を言えば、
+親プロセスである PowerShell の stdout と stderr を継承して欲しいのだが。
+この方法では PowerShell スクリプトの stdout と stderr をファイルにリダイレクトしても、
+Start-Process で起動したプロセスはコンソールに出力されるようである。
