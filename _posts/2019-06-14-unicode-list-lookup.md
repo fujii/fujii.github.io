@@ -7,6 +7,7 @@ tags:
 
 * [unicode.org: Code Charts](https://unicode.org/charts/)
 * [unicode.org: Unicode Emoji](https://www.unicode.org/emoji/)
+* [unicode.org: Full Emoji List](https://unicode.org/emoji/charts/full-emoji-list.html)
 
 * [Wikipedia: List of Unicode characters](https://en.wikipedia.org/wiki/List_of_Unicode_characters)
 
