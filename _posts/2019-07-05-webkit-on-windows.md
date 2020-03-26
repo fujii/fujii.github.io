@@ -5,6 +5,8 @@ description: ""
 tags: 
 ---
 
+Updated: 2020-03-26
+
 I'm working on WebKit on Windows these days.
 Sometimes I see someone asking about WebKit for Windows.
 I would summarize the current situation.
@@ -15,26 +17,27 @@ I would summarize the current situation.
 
 ## AppleWin port
 
-[AppleWin port](https://trac.webkit.org/wiki/BuildingOnWindows) is a upstream port.
+[AppleWin port](https://trac.webkit.org/wiki/BuildingOnWindows) is a upstream port which is used for iTunes for Windows.
 It uses the same components with Mac port, i.e. Core Graphics and Core Foundation, etc.
-However, WebKitSupportLibrary.zip is [not redistributable](https://developer.apple.com/opensource/internet/webkit_sptlib_agree.html).
 
 It supports only WebKit1.
 And, WebKit thread is not separated from UI thread.
 The browser becomes unresponsive while running JavaScript benchmarks.
 
-Although iTunes for Windows is using both 32bit and 64bit version of AppleWin port,
-only 32bit version of WebKitSupportLibrary.zip and WebKitAuxiliaryLibrary.zip are publicly available at the moment.
-So, you can compile only 32bit version.
-32bit version of Windows JavaScriptCore is supporting only Low Level Interpreter C Loop, not supporting JIT.
+AppleWin port is supporting both 32bit and 64bit versions because iTunes for Windows is supporting them.
+However, 32bit version of Windows JavaScriptCore is supporting only Low Level Interpreter C Loop, not supporting JIT.
 LLInt CLoop has [the high stack consumption issue for MSVC](https://lists.webkit.org/pipermail/webkit-dev/2019-June/030718.html).
 
-The latest built binary can be downloaded from Buildbot.
-It is compiling 64bit version by using 64bit version of WebKitSupportLibrary.zip and WebKitAuxiliaryLibrary.zip, which is not publicly available at the moment.
-You need to install iTunes on your PC.
+The latest 64bit built binary can be downloaded from Buildbot.
+You need to install iTunes on your PC by using MSI installer.
+You can't use Microsoft Store version of iTunes.
 
+* <https://www.apple.com/itunes/download/win64>
 * [How to run the latest WebKit ( Safari ) on Windows](https://medium.com/@alSkachkov/how-to-load-the-latest-webkit-on-windows-962a9219c1e1)
+* <https://bugs.webkit.org/show_bug.cgi?id=206350>
 
+You can compile out both 32bit and 64bit AppleWin port by yourself.
+However, the required library WebKitSupportLibrary.zip is [not redistributable](https://developer.apple.com/opensource/internet/webkit_sptlib_agree.html).
 
 ## WinCairo port
 
