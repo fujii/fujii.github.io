@@ -5,7 +5,7 @@ description: ""
 tags: 
 ---
 
-Updated: 2020-03-26
+Updated: 2020-06-27
 
 I'm working on WebKit on Windows these days.
 Sometimes I see someone asking about WebKit for Windows.
@@ -43,7 +43,7 @@ However, the required library WebKitSupportLibrary.zip is [not redistributable](
 
 [WinCairo port](https://trac.webkit.org/wiki/BuildingCairoOnWindows) is a redistributable upstream Windows port.
 It supports both WebKit1 and WebKit2, but it [plans to remove WebKit1](https://bugs.webkit.org/show_bug.cgi?id=194904).
-WinCairo WebKit2 doesn't support Accelerated Compositing at the moment.
+WinCairo WebKit1 and WebKit2 are using GraphicsLayerTextureMapper for Accelerated Compositing at the moment, but it's still immature.
 
 It supports only 64bit.
 Its JavaScriptCore supports LLInt Asm, baseline JIT and DFG JIT, but neither FTL JIT nor Web Assembly.
@@ -52,8 +52,11 @@ The latest built binary can be downloaded from Buildbot.
 
 * [Download build artifacts from Buildbot](https://trac.webkit.org/wiki/BuildingCairoOnWindows#DownloadbuildartifactsfromBuildbot)
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Latest <a href="https://twitter.com/hashtag/WebKit?src=hash&amp;ref_src=twsrc%5Etfw">#WebKit</a> MiniBrowser for Windows based on WinCairo 64<a href="https://t.co/SpdGSAsvW3">https://t.co/SpdGSAsvW3</a> :<br><br>Todo: `Download build artifacts from Buildbot` .<br>~ 125mb<br>I&#39;d like to embed this as WKwebView in Java .. but I can&#39;t. <a href="https://t.co/uCBnngXPK9">pic.twitter.com/uCBnngXPK9</a></p>&mdash; Friedhold Matz (@FriedholdMatz) <a href="https://twitter.com/FriedholdMatz/status/1275689950902734852?ref_src=twsrc%5Etfw">June 24, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 [Microsoft Playwright](https://www.npmjs.com/package/playwright) is distributing WinCairo port WebKit.
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Playwright (WebKit on Windows) <a href="https://t.co/PCluWMkI2s">pic.twitter.com/PCluWMkI2s</a></p>&mdash; Fujii Hironori (藤井宏憲) (@fujii0) <a href="https://twitter.com/fujii0/status/1273354598921560065?ref_src=twsrc%5Etfw">June 17, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## QtWebKit
 
