@@ -44,6 +44,7 @@ However, the required library WebKitSupportLibrary.zip is [not redistributable](
 [WinCairo port](https://trac.webkit.org/wiki/BuildingCairoOnWindows) is a redistributable upstream Windows port.
 It supports both WebKit1 and WebKit2, but it [plans to remove WebKit1](https://bugs.webkit.org/show_bug.cgi?id=194904).
 WinCairo WebKit1 and WebKit2 are using GraphicsLayerTextureMapper for Accelerated Compositing at the moment, but it's still immature.
+I'd like to recommend to disable accelerated compositing by using menu at the moment.
 
 It supports only 64bit.
 Its JavaScriptCore supports LLInt Asm, baseline JIT and DFG JIT, but neither FTL JIT nor Web Assembly.
@@ -62,7 +63,7 @@ Here is the list of Microsoft Playwright modifications to WinCairo as far as I k
 
 * Disabled high DPI support
 * Use the complex text code path
-
+* No way to disable accelerated compositing
 
 ## QtWebKit
 
