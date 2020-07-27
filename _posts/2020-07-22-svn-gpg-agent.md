@@ -53,9 +53,13 @@ cache ID は realm string を MD5 したものである。
 たとえば `echo -n "<https://svn.webkit.org:443> Mac OS Forge" | md5sum` とする。
 これは `~/.subversion/auth/svn.simple/8e062ccdd6bc2b444f13bc12dbfd0c61` のようにファイル名としても利用されている。
 
-cache ID を利用して起動している gpg-agent に記憶されているパスワードを取得したり、新たに記憶させたりできる。
+cache ID を利用して起動している gpg-agent にパスワードを新たに記憶させたり、すでに記憶されている場合はパスワードを取得できる。
 ~~~
 echo GET_PASSPHRASE 8e062ccdd6bc2b444f13bc12dbfd0c61 X prompt description | gpg-connect-agent
+~~~
+記憶しているパスワードをクリアする。
+~~~
+echo CLEAR_PASSPHRASE 8e062ccdd6bc2b444f13bc12dbfd0c61 | gpg-connect-agent
 ~~~
 
 gpg-agent を終了すると記憶したパスワードは忘れてしまう。
