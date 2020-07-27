@@ -5,7 +5,7 @@ description: ""
 tags: 
 ---
 
-Updated: 2020-06-27
+Updated: 2020-07-27
 
 I'm working on WebKit on Windows these days.
 Sometimes I see someone asking about WebKit for Windows.
@@ -73,6 +73,17 @@ WebKitGTK is a well maintained upstream port, but doesn't support Windows.
 So, Cygwin or WSL and X11 server (VcXsrv or Cygwin/X) are needed to run.
 Cygwin has epiphany and midori packages, but very old.
 
+You can use Microsoft Playwright on WSL.
+
+~~~
+wget https://playwright.azureedge.net/builds/webkit/1317/webkit-ubuntu-20.04.zip
+unzip webkit-ubuntu-20.04.zip
+apt-get install libnotify4 libenchant1c2a libgstreamer-plugins-bad1.0-0
+./minibrowser-gtk/pw_run.sh https://google.com
+~~~
+
+See [browsers.json](https://github.com/microsoft/playwright/blob/master/browsers.json) and
+[browserFetcher.ts](https://github.com/microsoft/playwright/blob/master/src/install/browserFetcher.ts) for the URL of the distribution.
 
 ## WPE WebKit
 
