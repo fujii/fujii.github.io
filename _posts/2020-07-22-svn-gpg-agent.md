@@ -41,6 +41,14 @@ Subversion で gpg-agent を使う際の注意点は
 pinentry にはいくつか種類がある。
 たとえば GTK 版を利用するときは `sudo apt-get install pinentry-gtk2` でインストールして、
 `sudo update-alternatives --config pinentry` で選択する。
+もしくは `~/.gnupg/gpg-agent.conf` に設定する。
+
+~~~
+default-cache-ttl 31536000
+max-cache-ttl 31536000
+pinentry-program /usr/bin/pinentry-gtk-2
+~~~
+
 pinentry-tty を利用するときは `GPG_TTY` の指定が必要である。
 
 条件はよくわかっていないが、多分ユーザ名が判明していない場合 gpg-agent を経由せずに svn が直接にユーザ名とパスワードを聞いてくるようである。
