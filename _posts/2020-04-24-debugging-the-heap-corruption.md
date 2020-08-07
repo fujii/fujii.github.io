@@ -8,6 +8,10 @@ tags:
 Windows 版 WebKit のヒープ破壊のデバッグに１週間以上費やした。
 <https://bugs.webkit.org/show_bug.cgi?id=209847>
 
+仕事で OSS をやっていると、デバッグの比率が高く、しかも知らないコードをデバッグする必要がある。
+自身のデバッグ技術と作業効率の向上ために記録を残しておく。
+私は Windows 開発に詳しくはないのでもっといい方法があっただろうと思います。
+
 当初は手許の PC 上では再現できず、自動テストサーバー上でのみ再現した。
 さいわい msconfig.exe で BOOT option を変更し CPU 数を2にすると、手許の PC でも再現することができた。
 さらに、BOOT option を変更しなくても Task Manger で powershell.exe を Set Affinity で CPU ２つに制限することでも、
@@ -31,6 +35,7 @@ WebKit では多くのオブジェクトが reference counter を用いて生存
 必ずひとつの thread からしか reference counter の上げ下げを行わないオブジェクトには thread unsafe な reference counter が利用されるが、
 万が一、複数の thread から同時にその reference counter を decrement すると、2回 destructor が呼ばれるバグとなる。
 以前にそのバグに遭遇したことがあったので、今回もそれを疑った。
+(正確には thread unsafe ではなく thread-hostile らしい)
 
 thread safe な reference counter には、破棄された後に reference counter が操作されないかをチェックするデバッグ用コードがあるので、
 同様のことを thread unsafe な reference counter に追加した。
