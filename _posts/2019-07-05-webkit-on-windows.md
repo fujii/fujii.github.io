@@ -5,7 +5,7 @@ description: ""
 tags: 
 ---
 
-Updated: 2020-07-27
+Updated: 2020-08-10
 
 I'm working on WebKit on Windows these days.
 Sometimes I see someone asking about WebKit for Windows.
@@ -21,6 +21,7 @@ I would summarize the current situation.
 It uses the same components with Mac port, i.e. Core Graphics and Core Foundation, etc.
 
 It supports only WebKit1.
+[They removed AppleWin WebKit2](https://webkit.org/b/114096).
 And, WebKit thread is not separated from UI thread.
 The browser becomes unresponsive while running JavaScript benchmarks.
 
@@ -91,6 +92,9 @@ apt-get install libnotify4 libenchant1c2a libgstreamer-plugins-bad1.0-0
 
 See [browsers.json](https://github.com/microsoft/playwright/blob/master/browsers.json) and
 [browserFetcher.ts](https://github.com/microsoft/playwright/blob/master/src/install/browserFetcher.ts) for the URL of the distribution.
+
+Now, WebKitGTK and WPE WebKit have nightly build archives.
+[Bug 215266 – \[GTK\]\[WPE\] Add a script for generating MiniBrowser bundles](https://bugs.webkit.org/show_bug.cgi?id=215266)
 
 ## WPE WebKit
 
