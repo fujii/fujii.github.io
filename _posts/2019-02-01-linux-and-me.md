@@ -59,16 +59,16 @@ Emacs や GCC も授業で知った。
 英語版の Slackware をインストールした後に、日本語パッケージ集の PJE をインストールするものだった。
 インストールが面倒だった。
 
-* https://web.archive.org/web/*/http://www.pje.linux.or.jp/
-* https://ja.wikipedia.org/wiki/Project-JE
+* <https://web.archive.org/web/*/http://www.pje.linux.or.jp/>
+* <https://ja.wikipedia.org/wiki/Project-JE>
 
 1999年1月(19歳)。
 1999年1月24日に発売された Linux Japan の付録 CD-ROM に Vine Linux 0.9 が収録されていた。
 
-* https://web.archive.org/web/19990429085602/http://linuxjapan.com/
+* <https://web.archive.org/web/19990429085602/http://linuxjapan.com/>
 * [ASCII.jp：Project Vine、『Vine Linux 0.9beta7』をテスト公開](https://ascii.jp/elem/000/000/300/300155/index.html)
-* https://web.archive.org/web/19990208010748/http://vine.flatout.org/
-* https://ja.wikipedia.org/wiki/Vine_Linux
+* <https://web.archive.org/web/19990208010748/http://vine.flatout.org/>
+* <https://ja.wikipedia.org/wiki/Vine_Linux>
 
 以前に使っていた PJE に比べると、格段に便利で感動した。
 最初のうちは Windows とデュアルブートしていたが、
