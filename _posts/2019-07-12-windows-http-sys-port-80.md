@@ -5,9 +5,16 @@ description: ""
 tags: 
 ---
 
+This is a famous problem.
+
 * [windows 7 - Why is System process listening on Port 80? - Super User](https://superuser.com/q/43307/424146)
 * [iis - Port 80 is being used by SYSTEM (PID 4), what is that? - Stack Overflow](https://stackoverflow.com/q/1430141/2691131)
 * [Opening Up Port 80 For Apache to Use On Windows](https://web.archive.org/web/20181004143631/http://www.devside.net/wamp-server/opening-up-port-80-for-apache-to-use-on-windows)
+
+And, a Microsoft engineer Raymond Chen answered here.
+
+* [How can I determine why the System process is listening on port 80? \| The Old New Thing](https://devblogs.microsoft.com/oldnewthing/20180703-00/?p=99145)
+
 
 Here is the result of `netstat -abo`:
 
@@ -27,7 +34,7 @@ Use `netstat -ao | findstr :80` for concise result.
 HTTP.sys implements [HTTP Server API](https://docs.microsoft.com/en-us/windows/win32/http/http-api-start-page) to listen the ports.
 There are two ways to work around the issue.
 
-## Disable services which are using HTTP.sys
+## Disable all services which are using HTTP.sys
 
 Get the status of which services are using HTTP Server API by invoking `netsh http show servicestate`.
 In the following example, pid 2668 is registering `HTTP://+:80/116B50EB-ECE2-41AC-8429-9F9E963361B7/`.
@@ -90,9 +97,7 @@ Here is the excerpt of `netsh http show urlacl`.
             SDDL: D:(A;;GX;;;NS)
 ~~~
 
-Then, disable the services.
-
-* [How can I determine why the System process is listening on port 80? \| The Old New Thing](https://devblogs.microsoft.com/oldnewthing/20180703-00/?p=99145)
+Then, google the keywords and disable all services.
 
 ## Change listening addresses of HTTP.sys
 
