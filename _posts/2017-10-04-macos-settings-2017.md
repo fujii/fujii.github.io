@@ -29,8 +29,8 @@ Karabiner-Elements 11 からは旧バージョンの設定が使用できない�
 
 詳しい手順はこちら
 
-* http://www.milkmemo.com/entry/windows_kebord_mac
-* http://office-m-blog.com/blog/2017/05/06/post-1279/
+* <http://www.milkmemo.com/entry/windows_kebord_mac>
+* <http://office-m-blog.com/blog/2017/05/06/post-1279/>
 
 ## Homebrew
 
