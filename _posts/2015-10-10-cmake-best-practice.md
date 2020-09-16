@@ -74,6 +74,9 @@ option(hello_use_foo "Use Foo" ON)
 
 ## Do not use CMAKE_SOURCE_DIR
 
+> One of the main features of CMake is the ability for different C++ libraries to easily be assembled together.
+> --- Bill Hoffman (The original creator of CMake) <https://blog.kitware.com/celebrating-20-years-of-cmake/>
+
 Do not assume your project is always the top project.
 Use `CMAKE_CURRENT_SOURCE_DIR`, `PROJECT_SOURCE_DIR` or `<PROJECT-NAME>_SOURCE_DIR` instead.
 
