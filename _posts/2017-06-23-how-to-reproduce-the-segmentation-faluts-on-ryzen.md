@@ -6,14 +6,14 @@ category:
 tags: [linux]
 ---
 
-It's been reported that sporadic segmentation faults were occurred on Linux/Ryzen
+It's been reported that sporadic segmentation faults occurred on Linux/Ryzen
 under heavy CPU loads especially during parallel-compiling large
-OpenSource code such as Linux kernel, Mesa, LLVM, Chromium and WebKit.
+OpenSource code such as Linux kernel, Mesa, LLVM, Chromium, and WebKit.
 But, it's difficult to reproduce the segmentation faults due to the
 low probability and the uncleared reproducibility conditions.
 I'd like to summarize the best practices in this post.
 
-This kind of problem is known as [Sig11 problem](http://bitwizard.nl/sig11).
+This kind of problem is known as the [Sig11 problem](http://bitwizard.nl/sig11).
 
 This is a different problem with the system reboot problem
 [on DragonFly BSD](http://gitweb.dragonflybsd.org/dragonfly.git/commitdiff/b48dd28447fc8ef62fbc963accd301557fd9ac20)
@@ -23,8 +23,8 @@ Finally, [AMD confirms this issue](http://www.phoronix.com/scan.php?page=news_it
 
 ## Preparations
 
-It's been reported that some conditions significantly reduce the probability.
-On the other hand, others have reported such conditions change nothing.
+It's been reported that some conditions significantly reduced the probability.
+On the other hand, others have reported such conditions changed nothing.
 There is nothing obvious at the moment.
 
 Check your following UEFI BIOS settings.
@@ -34,10 +34,10 @@ Check your following UEFI BIOS settings.
 
 uOP cache setting can be found in `Advanced > AMD CBS > Zen Common Options > Opcache Control` in my UEFI.
 
-This crashes happen not only on Linux,
+These crashes happen not only on Linux
 but also [on Windows Subsystems for Linux](https://community.amd.com/thread/215773?start=75&tstart=0),
-[on NetBSD](https://twitter.com/oshimyja/status/872099591759507457)
-and [on FreeBSD](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=221029).
+[NetBSD](https://twitter.com/oshimyja/status/872099591759507457),
+and [FreeBSD](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=221029).
 Actually Linux is the most reported.
 This article uses it.
 
@@ -105,10 +105,10 @@ $ while make -j$(nproc); do make clean; done
 It takes about ten minutes if you are lucky, about two hours if ordinary, never happens if unlucky.
 
 If it'd happen, collect a coredump file `core` if it'd be generated.
-`gcc` usually doesn't generate coredump because it catches the segmentation faults by itself and output an own error report.
+GCC usually doesn't generate coredump because it catches the segmentation faults by itself and outputs an own error report.
 
-`libtool` is implemented as a shell script.
-I'd like to recommend to compile code using `libtool` because it's easy to get coredump of `bash`.
+Libtool is implemented as a shell script.
+I'd like to recommend to compile code using Libtool because it's easy to get coredump of Bash.
 
 Linux kernel may output some messages. Take the result of `dmesg` command.
 
@@ -117,7 +117,7 @@ Satoru Takeuchi created [a useful script](https://gist.github.com/satoru-takeuch
 
 ## Postmortem Examination
 
-There is a particular pattern in some Ryzen's crashes.
+There is a particular pattern in some of Ryzen's crashes.
 According to [Hideki EIRAKU's investigation](http://www.e-hdk.com/diary/d201706c.html#20-2),
 Ryzen seems to execute 64 bytes ahead instructions than where RIP register is pointing.
 
