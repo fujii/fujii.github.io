@@ -7,10 +7,10 @@ tags : cmake
 
 I'd like to collect CMake Best Practices from the Internet.
 
-## Use function instread of macro
+## Use function instead of macro
 
-Macro overrides variables in callers variable scope.
-Use function which has a own variable scope.
+Macro overrides variables in caller's variable scope.
+Use function which has an own variable scope.
 And, use `set(<variable> <value>... PARENT_SCOPE)` if you want to set a variables in parent scope.
 
 ~~~cmake
@@ -22,7 +22,7 @@ endfunction()
 
 ## Use target_sources
 
-Using `target_sources` makes more concise than using custom variable.
+Using `target_sources` makes more concise than using a custom variable.
 
 ~~~cmake
 set(src hello.cxx)
@@ -64,9 +64,9 @@ target_compile_features(hello PRIVATE cxx_variadic_templates)
 
 ## Prefix cache entries
 
-Cache entry is global.
+The cache entry is global.
 Do not assume your project is the top project.
-Use prefix to avoid name conflicts.
+Use a prefix to avoid name conflicts.
 
 ~~~cmake
 option(hello_use_foo "Use Foo" ON)
@@ -78,11 +78,11 @@ option(hello_use_foo "Use Foo" ON)
 > --- Bill Hoffman (The original creator of CMake) <https://blog.kitware.com/celebrating-20-years-of-cmake/>
 
 Do not assume your project is always the top project.
-Use `CMAKE_CURRENT_SOURCE_DIR`, `PROJECT_SOURCE_DIR` or `<PROJECT-NAME>_SOURCE_DIR` instead.
+Use `CMAKE_CURRENT_SOURCE_DIR`, `PROJECT_SOURCE_DIR`, or `<PROJECT-NAME>_SOURCE_DIR` instead.
 
 ## Do not generate into CMAKE_CURRENT_BINARY_DIR
 
-The directory `${CMAKE_CURRENT_BINARY_DIR}` is shared by multple configurations
+The directory `${CMAKE_CURRENT_BINARY_DIR}` is shared by multiple configurations
 in multi-configuration build systems such as Visual Studio.
 Then, if you run clean in Release configuration, generated files of Debug configuration will also be deleted.
 Generated files should be in `${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}`.
@@ -123,7 +123,7 @@ add_custom_command(
 
 ## Do not specify a library type explicitly unless necessary
 
-Users of your library should be able to choose static library or shared library to build.
+Users of your library should be able to choose a static library or a shared library to build.
 Do not specify a library type explicitly unless necessary.
 
 ~~~cmake
@@ -136,25 +136,25 @@ cmake -D BUILD_SHARED_LIBS=ON $src_dir
 ~~~
 
 The initial value of BUILD_SHARED_LIBS is OFF.
-If you want to change the defalut, make it a option.
+If you want to change the default, make it an option.
 
 ~~~cmake
 option(BUILD_SHARED_LIBS "build as shared libraries" ON)
 ~~~
-This violates "Prefix cache entries" rule.
+This violates the "Prefix cache entries" rule.
 Another option is:
 
 ~~~cmake
 option(hello_build_shared_libs "build hello as a shared library" ON)
 set(BUILD_SHARED_LIBS ${hello_build_shared_libs})
 ~~~
-Note that directories has a own variable scope,
+Note that directories have an own variable scope,
 setting BUILD_SHARED_LIBS does not affect the parent directory.
 
 ## Define FOLDER directory property
 
 If you have a lot of targets,
-FOLDER target property is usefull to organize the project files into folders in IDE.
+FOLDER target property is useful to organize the project files into folders in IDE.
 But, it is tedious to specify the property to all targets.
 There is a solution to specify a folder name to a directory.
 If a target property is not specified, directory property is inherited.
