@@ -17,7 +17,7 @@ I would summarize the current situation.
 
 ## AppleWin port
 
-[AppleWin port](https://trac.webkit.org/wiki/BuildingOnWindows) is a upstream port which is used for iTunes for Windows.
+[AppleWin port](https://trac.webkit.org/wiki/BuildingOnWindows) is an upstream port that is used for iTunes for Windows.
 It uses the same components with Mac port, i.e. Core Graphics and Core Foundation, etc.
 
 It supports only WebKit1.
@@ -26,12 +26,12 @@ And, WebKit thread is not separated from UI thread.
 The browser becomes unresponsive while running JavaScript benchmarks.
 
 AppleWin port is supporting both 32bit and 64bit versions because iTunes for Windows is supporting them.
-However, 32bit version of Windows JavaScriptCore is supporting only Low Level Interpreter C Loop, not supporting JIT.
+However, the 32bit version of Windows JavaScriptCore is supporting only Low-Level Interpreter C Loop, not supporting JIT.
 LLInt CLoop has [the high stack consumption issue for MSVC](https://lists.webkit.org/pipermail/webkit-dev/2019-June/030718.html).
 
 The latest 64bit built binary can be downloaded from Buildbot.
-You need to install iTunes on your PC by using MSI installer.
-You can't use Microsoft Store version of iTunes.
+You need to install iTunes on your PC by using an MSI installer.
+You can't use the Microsoft Store version of iTunes.
 
 * <https://www.apple.com/itunes/download/win64>
 * [How to run the latest WebKit ( Safari ) on Windows](https://medium.com/@alSkachkov/how-to-load-the-latest-webkit-on-windows-962a9219c1e1)
@@ -45,10 +45,10 @@ However, the required library WebKitSupportLibrary.zip is [not redistributable](
 [WinCairo port](https://trac.webkit.org/wiki/BuildingCairoOnWindows) is a redistributable upstream Windows port.
 It supports both WebKit1 and WebKit2, but it [plans to remove WebKit1](https://bugs.webkit.org/show_bug.cgi?id=194904).
 WinCairo WebKit1 and WebKit2 are using GraphicsLayerTextureMapper for Accelerated Compositing at the moment, but it's still immature.
-I'd like to recommend to disable accelerated compositing by using menu at the moment.
+I'd like to recommend to disable accelerated compositing by using the menu at the moment.
 
 It supports only 64bit.
-Its JavaScriptCore supports LLInt Asm, baseline JIT and DFG JIT, but neither FTL JIT nor Web Assembly.
+Its JavaScriptCore supports LLInt Asm, baseline JIT, and DFG JIT, but neither FTL JIT nor Web Assembly.
 
 The latest built binary can be downloaded from Buildbot.
 
@@ -68,7 +68,7 @@ Here is the list of Microsoft Playwright modifications to WinCairo as far as I k
 
 ## QtWebKit
 
-[QtWebKit](https://github.com/qtwebkit/qtwebkit) a downstream port which supports WebKit1 and WebKit2.
+[QtWebKit](https://github.com/qtwebkit/qtwebkit) a downstream port that supports WebKit1 and WebKit2.
 
 In WebKit1, WebKit thread and UI thread are separated.
 It seems that Accelerated Compositing doesn't work on Windows.
@@ -77,9 +77,9 @@ It seems that Accelerated Compositing doesn't work on Windows.
 
 ## WebKitGTK
 
-WebKitGTK is a well maintained upstream port, but doesn't support Windows.
+WebKitGTK is a well maintained upstream port but doesn't support Windows.
 So, Cygwin or WSL and X11 server (VcXsrv or Cygwin/X) are needed to run.
-Cygwin has epiphany and midori packages, but very old.
+Cygwin has Epiphany and Midori packages, but very old.
 
 You can use Microsoft Playwright on WSL.
 
@@ -98,7 +98,7 @@ Now, WebKitGTK and WPE WebKit have nightly build archives.
 
 ## WPE WebKit
 
-WPE WebKit is a well maintained upstream port, but doesn't support Windows.
+WPE WebKit is a well maintained upstream port but doesn't support Windows.
 
 ## JavaFX WebKit
 
@@ -107,7 +107,7 @@ But I don't know.
 
 ## FTW port
 
-[FTW port](https://bugs.webkit.org/show_bug.cgi?id=199206) is a new upstream Windows port which uses Direct2D and DirectWrite.
+[FTW port](https://bugs.webkit.org/show_bug.cgi?id=199206) is a new upstream Windows port that uses Direct2D and DirectWrite.
 
 ## MontionMark 1.1
 
@@ -125,8 +125,8 @@ Firefox 68.0.2 (64bit)              | 272.57
 Firefox 68.0.2 (64bit) no-GPU       | 105.12
 
 * Windows 10 version 1903 with 150% device scale factor display
-* AppleWin: https://s3-us-west-2.amazonaws.com/archives.webkit.org/win-x86_64-release/249040.zip (This is a 32bit version with regardless to the URL)
+* AppleWin: https://s3-us-west-2.amazonaws.com/archives.webkit.org/win-x86_64-release/249040.zip (This is a 32bit version regardless of the URL)
 * WinCairo: https://s3-us-west-2.amazonaws.com/archives.webkit.org/wincairo-x86_64-release/249042.zip
 * QtWebKit: otter-browser-win64-1.0.81-weekly272-setup.exe with manually adjusting zooming level
 
-Here are [screenshots](https://ibb.co/album/mwxUdv).
+Here are the [screenshots](https://ibb.co/album/mwxUdv).
