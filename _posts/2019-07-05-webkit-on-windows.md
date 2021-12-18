@@ -5,15 +5,11 @@ description: ""
 tags: 
 ---
 
-Updated: 2020-08-10
+Updated: 2021-12-18
 
 I'm working on WebKit on Windows these days.
 Sometimes I see someone asking about WebKit for Windows.
 I would summarize the current situation.
-
-* [Is there anyone working on bringing WebKit2 to Windows?](https://www.reddit.com/r/WebKit/comments/a4zu94/is_there_anyone_working_on_bringing_webkit2_to/)
-* [Are there any modern WebKit-based browsers for Windows?](https://www.reddit.com/r/browsers/comments/a3ykh8/are_there_any_modern_webkitbased_browsers_for/)
-
 
 ## AppleWin port
 
@@ -44,7 +40,7 @@ However, the required library WebKitSupportLibrary.zip is [not redistributable](
 
 [WinCairo port](https://trac.webkit.org/wiki/BuildingCairoOnWindows) is a redistributable upstream Windows port.
 It supports both WebKit1 and WebKit2, but it [plans to remove WebKit1](https://bugs.webkit.org/show_bug.cgi?id=194904).
-WinCairo WebKit1 and WebKit2 are using GraphicsLayerTextureMapper for Accelerated Compositing at the moment, but it's still immature.
+WinCairo WebKit1 and WebKit2 are using GraphicsLayerTextureMapper and GraphicsLayerWC for Accelerated Compositing at the moment, but it's still immature.
 I'd like to recommend to disable accelerated compositing by using the menu at the moment.
 
 It supports only 64bit.
@@ -63,8 +59,9 @@ The latest built binary can be downloaded from Buildbot.
 Here is the list of Microsoft Playwright modifications to WinCairo as far as I know.
 
 * Disabled high DPI support
+* Disabled GPU process mode
 * Use the complex text code path
-* No way to disable accelerated compositing
+* Added a option to disable accelerated compositing (--disable-accelerated-compositing)
 
 ## QtWebKit
 
