@@ -67,11 +67,10 @@ xterm -ls
 
 ## APT のミラーサーバの設定
 
-* [repository - How can I get apt to use a mirror close to me, or choose a faster mirror? - Ask Ubuntu](https://askubuntu.com/a/37754)
+[Ubuntuの高速化～リポジトリ参照先の変更 - Qiita](https://qiita.com/kujiraza/items/c02908e0aed1001b2470)
+で紹介されている以下のコマンドがお手軽。
 
-[18.04 LTS (Bionic Beaver) 用 sources.list](https://gist.githubusercontent.com/fujii/547da696c67294955ab984da25c329ef/raw/bb778388611266878f42225e8b5fe1f38157ec38/sources.list) を /etc/apt/sources.list に置く。
-
-もしくは software-properties-gtk で設定する。
+> sudo sed -i.bak -r 's!deb http://archive\S+!deb mirror://mirrors.ubuntu.com/mirrors.txt!' /etc/apt/sources.list
 
 ## start コマンド
 
