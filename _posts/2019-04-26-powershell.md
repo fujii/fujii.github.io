@@ -11,6 +11,12 @@ tags:
 * [逆引きUNIXコマンド/Linux,コマンドプロンプト,PowerShellコマンド比較表 - Linuxと過ごす](https://linux.just4fun.biz/?%E9%80%86%E5%BC%95%E3%81%8DUNIX%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89/Linux%2C%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%2CPowerShell%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E6%AF%94%E8%BC%83%E8%A1%A8)
 * [PowerShell Gallery](https://www.powershellgallery.com/)
 
+設定ファイルを使うためにまず管理者権限で証明なしスクリプトを許可する。
+~~~
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+~~~
+
+`mkdir (Split-Path $profile)` でディレクトリを作成し、
 `notepad $profile` で下の設定をすれば、とりあえず快適。
 
 * Emacs key bind に設定
