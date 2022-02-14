@@ -5,7 +5,7 @@ description: ""
 tags: 
 ---
 
-Updated: 2021-12-18
+Updated: 2022-02-14
 
 I'm working on WebKit on Windows these days.
 Sometimes I see someone asking about WebKit for Windows.
@@ -33,6 +33,9 @@ You can't use the Microsoft Store version of iTunes.
 * [How to run the latest WebKit ( Safari ) on Windows](https://medium.com/@alSkachkov/how-to-load-the-latest-webkit-on-windows-962a9219c1e1)
 * <https://bugs.webkit.org/show_bug.cgi?id=206350>
 
+AppleWin [has disabled](https://bugs.webkit.org/show_bug.cgi?id=222576) WebInspectorUI as default.
+WebInspector can't be used with the binaries.
+
 You can compile out both 32bit and 64bit AppleWin port by yourself.
 However, the required library WebKitSupportLibrary.zip is [not redistributable](https://developer.apple.com/opensource/internet/webkit_sptlib_agree.html).
 
@@ -40,8 +43,6 @@ However, the required library WebKitSupportLibrary.zip is [not redistributable](
 
 [WinCairo port](https://trac.webkit.org/wiki/BuildingCairoOnWindows) is a redistributable upstream Windows port.
 It supports both WebKit1 and WebKit2, but it [plans to remove WebKit1](https://bugs.webkit.org/show_bug.cgi?id=194904).
-WinCairo WebKit1 and WebKit2 are using GraphicsLayerTextureMapper and GraphicsLayerWC for Accelerated Compositing at the moment, but it's still immature.
-I'd like to recommend to disable accelerated compositing by using the menu at the moment.
 
 It supports only 64bit.
 Its JavaScriptCore supports LLInt Asm, baseline JIT, and DFG JIT, but neither FTL JIT nor Web Assembly.
@@ -52,7 +53,7 @@ The latest built binary can be downloaded from Buildbot.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Latest <a href="https://twitter.com/hashtag/WebKit?src=hash&amp;ref_src=twsrc%5Etfw">#WebKit</a> MiniBrowser for Windows based on WinCairo 64<a href="https://t.co/SpdGSAsvW3">https://t.co/SpdGSAsvW3</a> :<br><br>Todo: `Download build artifacts from Buildbot` .<br>~ 125mb<br>I&#39;d like to embed this as WKwebView in Java .. but I can&#39;t. <a href="https://t.co/uCBnngXPK9">pic.twitter.com/uCBnngXPK9</a></p>&mdash; Friedhold Matz (@FriedholdMatz) <a href="https://twitter.com/FriedholdMatz/status/1275689950902734852?ref_src=twsrc%5Etfw">June 24, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-[Microsoft Playwright](https://www.npmjs.com/package/playwright) is distributing WinCairo port WebKit with modifications.
+[Microsoft Playwright](https://www.npmjs.com/package/playwright) is distributing WinCairo port WebKit with some modifications.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Playwright (WebKit on Windows) <a href="https://t.co/PCluWMkI2s">pic.twitter.com/PCluWMkI2s</a></p>&mdash; Fujii Hironori (藤井宏憲) (@fujii0) <a href="https://twitter.com/fujii0/status/1273354598921560065?ref_src=twsrc%5Etfw">June 17, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -60,8 +61,14 @@ Here is the list of Microsoft Playwright modifications to WinCairo as far as I k
 
 * Disabled high DPI support
 * Disabled GPU process mode
-* Use the complex text code path
+* Use the complex text code path always
 * Added a option to disable accelerated compositing (--disable-accelerated-compositing)
+
+If you have installed [npm](https://www.npmjs.com/), you can run Playwright by the following command.
+
+~~~
+npx playwright wk https://webkit.org/
+~~~
 
 ## QtWebKit
 
@@ -101,10 +108,6 @@ WPE WebKit is a well maintained upstream port but doesn't support Windows.
 
 [Arunprasad Rajkumar](https://twitter.com/uint88) is [working on it in June 2019](https://lists.webkit.org/pipermail/webkit-dev/2019-June/030698.html).
 But I don't know.
-
-## FTW port
-
-[FTW port](https://bugs.webkit.org/show_bug.cgi?id=199206) is a new upstream Windows port that uses Direct2D and DirectWrite.
 
 ## MontionMark 1.1
 
