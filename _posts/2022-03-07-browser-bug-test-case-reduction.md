@@ -6,7 +6,7 @@ tags:
 ---
 ブラウザエンジンのバグレポートの Test Case Reduction に役立つかもしれないものを集める。
 
-* [Test Case Reduction | WebKit](https://webkit.org/test-case-reduction/)
+* [Test Case Reduction \| WebKit](https://webkit.org/test-case-reduction/)
 * [How to file a good browser bug](https://web.dev/how-to-file-a-good-bug/#minified-test-case)
 * [QA/Minimal Test Cases - MozillaWiki](https://wiki.mozilla.org/QA/Minimal_Test_Cases)
 
