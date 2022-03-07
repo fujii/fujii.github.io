@@ -22,7 +22,7 @@ tags:
 
 ## 整形
 
-{html,css,javascript} {tidy,formatter,beautifyer} で検索すればブラウザで利用するものが出てくる。
+{html,css,javascript} {tidy,formatter,beautifier} で検索すればブラウザで利用するものが出てくる。
 使用されていない CSS を除去してくれるものもある。
 apt-get intall tidy csstidy でインストールできるコマンドのものも覚えておくと役に立つ。
 
