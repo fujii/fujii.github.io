@@ -24,6 +24,10 @@ tags:
 
 {html,css,javascript} {tidy,formatter,beautifier} で検索すればブラウザで利用するものが出てくる。
 使用されていない CSS を除去してくれるものもある。
+
+* [Online HTML Beautifier](https://beautifytools.com/html-beautifier.php)
+* [PurifyCSS Online](https://purifycss.online/)
+
 apt-get intall tidy csstidy でインストールできるコマンドのものも覚えておくと役に立つ。
 
 * [HTML Tidy](https://www.html-tidy.org/)
