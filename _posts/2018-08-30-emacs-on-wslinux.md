@@ -81,7 +81,9 @@ Windows の `start` や Cygwin の `cygstart` のようなコマンド。
 
 ## Mozc の設定
 
-`sudo apt install emacs-mozc` でインストールする。
+`sudo apt install emacs-mozc mozc-utils-gui` でインストールする。
+どうもこれでは　mozc.el がバイトコンパイルされなていないために Emacs を起動するたびに "Package cl is deprecated" というメッセージが出てしまう。
+`sudo apt install emacs-mozc-bin mozc-utils-gui` して mozc.el は M-x list-packages からインストールしたほうが良さそう。
 
 Mozc の設定はコマンドで起動。
 
@@ -97,6 +99,16 @@ Mozc の設定はコマンドで起動。
 # 文字パレット
 /usr/lib/mozc/mozc_tool --mode=character_palette
 ~~~
+
+Ubuntu 22.04 ではエラーが出るようになった。
+
+> $ /usr/lib/mozc/mozc_tool --mode=config_dialog
+> /usr/lib/mozc/mozc_tool: error while loading shared libraries: libQt5Core.so.5: cannot open shared object file: No such file or directory
+
+エラーメッセージで検索すると以下のコマンドで解決することが分かる。
+
+> sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
+
 
 ## 感想
 
