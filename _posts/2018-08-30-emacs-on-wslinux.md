@@ -70,17 +70,18 @@ xterm -ls
 [Ubuntuの高速化～リポジトリ参照先の変更 - Qiita](https://qiita.com/kujiraza/items/c02908e0aed1001b2470)
 で紹介されている以下のコマンドがお手軽。
 
-> sudo sed -i.bak -r 's!deb http://archive\S+!deb mirror://mirrors.ubuntu.com/mirrors.txt!' /etc/apt/sources.list
+~~~
+sudo sed -i.bak -r 's!deb http://archive\S+!deb mirror://mirrors.ubuntu.com/mirrors.txt!' /etc/apt/sources.list
+~~~
 
 ## start コマンド
 
-Windows の start や Cygwin の cygstart のようなコマンド。下のページのものを拝借した。
-
-* [WSL で start コマンドを使う – HIGASHI Taiju – Medium](https://medium.com/@h.taiju/use-the-start-command-on-wsl-bea3d82725e1)
-
-`wslu` というパッケージに `wslview` というコマンドが追加された。 `sudo apt install ubuntu-wsl` でインストールして置くといいみたい。
+Windows の `start` や Cygwin の `cygstart` のようなコマンド。
+`wslu` というパッケージに `wslview` というコマンドが追加された。
 
 ## Mozc の設定
+
+`sudo apt install emacs-mozc` でインストールする。
 
 Mozc の設定はコマンドで起動。
 
