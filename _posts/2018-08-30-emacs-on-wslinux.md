@@ -109,6 +109,15 @@ Ubuntu 22.04 ではエラーが出るようになった。
 
 > sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
 
+## wsl.conf
+
+Windows の PATH が追加されないように /etc/wsl.conf に設定する。
+
+~~~
+[interop]
+appendWindowsPath = false
+~~~
+
 
 ## 感想
 
