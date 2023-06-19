@@ -32,3 +32,7 @@ apt-get intall tidy csstidy でインストールできるコマンドのもの�
 
 * [HTML Tidy](https://www.html-tidy.org/)
 * [CSSTidy](http://csstidy.sourceforge.net/)
+
+## 自動化
+
+* [Lithium](https://github.com/MozillaSecurity/lithium/): Line-based testcase reducer
