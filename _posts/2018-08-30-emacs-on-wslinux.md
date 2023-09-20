@@ -153,3 +153,12 @@ WSL まわりの環境はしばらくは模索が続くだろう。
 
 * [Windows Subsystem for Linux + X Windowを1.024倍くらい使いこなすための方法 - Qiita](https://qiita.com/nishemon/items/bb3aca972404f68bfcd6)
 * [WSL+Xming環境整備 - 簡潔なQ](https://qnighy.hatenablog.com/entry/2017/10/01/220000)
+
+
+## Emacs 29 で main threaed が回り続ける
+
+Emacs 29 から main threaed が回り続ける問題が発生し始めた。
+とりあえず環境変数 EMACS_IGNORE_TIMERFD=1 を設定する。
+
+* [#61258 - 29.0.60; pgtk build from git, WSLg, slow, heavy cpu use - GNU bug report logs](https://debbugs.gnu.org/cgi/bugreport.cgi?bug=61258)
+* [High CPU usage in WSL with Emacs 29.0.50 : emacs](https://www.reddit.com/r/emacs/comments/urivlg/high_cpu_usage_in_wsl_with_emacs_29050/)
