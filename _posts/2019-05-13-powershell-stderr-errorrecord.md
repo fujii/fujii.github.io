@@ -70,3 +70,10 @@ function Invoke-NativeCommand($command) {
 Start-Process で起動したプロセスはコンソールに出力されるようである。
 
 * [PowerShell: Running Executables - TechNet Articles](https://social.technet.microsoft.com/wiki/contents/articles/7703.powershell-running-executables.aspx)
+
+## PowerShell 7.1
+
+PowerShell 7.1 で [改修された](https://learn.microsoft.com/en-us/previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-71?view=powershell-7.1#breaking-changes-and-improvements) 。
+
+- Fix $? to not be $false when native command writes to stderr (#13395)
+- Make $ErrorActionPreference not affect stderr output of native commands (#13361)
