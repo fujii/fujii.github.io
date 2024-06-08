@@ -41,5 +41,9 @@ Edy, Suica, nanaco の電子マネーは一旦サーバーに預ける必要が�
 基本的にすべての Andoroid アプリは Google アカウントとの紐付けに対応してほしい。
 
 iPhone の羨ましいところは AirTag だったが、ついに Android もマネするようである。
-* [Androidの「デバイスを探す」が大幅パワーアップ、Bluetoothタグ対応や電源オフのPixel 8を発見可能に - ケータイ Watch](https://k-tai.watch.impress.co.jp/docs/news/1582879.html)
 まだ日本では発売されていないようである。
+* [Androidの「デバイスを探す」が大幅パワーアップ、Bluetoothタグ対応や電源オフのPixel 8を発見可能に - ケータイ Watch](https://k-tai.watch.impress.co.jp/docs/news/1582879.html)
+
+[以前に iPad を使っていたときは色々と不満があったが]({% post_url 2019-01-11-ipad %})、
+Android では特にない。
+上記の AirTag がないことくらいである。
