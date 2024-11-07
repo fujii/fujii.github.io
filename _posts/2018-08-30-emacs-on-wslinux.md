@@ -147,7 +147,11 @@ WSL まわりの環境はしばらくは模索が続くだろう。
 
 * [Windows Command-Line: Introducing the Windows Pseudo Console (ConPTY) – Windows Command Line Tools For Developers](https://blogs.msdn.microsoft.com/commandline/2018/08/02/windows-command-line-introducing-the-windows-pseudo-console-conpty/)
 
+## Alt+Shift でキーボードが切り替わる
 
+英語設定で日本語キーボードを使っていると、英語キーボードが消せないように思う。
+Alt+Shift でキーボードが切り替わってしまうのでこのショートカットを無効にする。
+https://superuser.com/q/698037
 
 ## リンク
 
